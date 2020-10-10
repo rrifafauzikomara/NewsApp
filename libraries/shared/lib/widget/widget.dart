@@ -1,0 +1,1 @@
+export 'card/card_pokemon.dart';
