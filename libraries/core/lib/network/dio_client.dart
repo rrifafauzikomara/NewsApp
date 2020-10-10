@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 class DioClient {
   final String apiBaseUrl;
 
-  DioClient(this.apiBaseUrl);
+  DioClient({@required this.apiBaseUrl});
 
   Dio get dio => _getDio();
 
   Dio _getDio() {
-    BaseOptions options = BaseOptions(
+    BaseOptions options = new BaseOptions(
       baseUrl: apiBaseUrl,
       connectTimeout: 50000,
       receiveTimeout: 30000,
     );
-    Dio dio = Dio(options);
+    Dio dio = new Dio(options);
     dio.interceptors.addAll(<Interceptor>[_loggingInterceptor()]);
 
     return dio;

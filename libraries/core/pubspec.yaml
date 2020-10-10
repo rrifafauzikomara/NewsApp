@@ -13,10 +13,7 @@ dependencies:
     sdk: flutter
   flutter_modular: ^2.0.1
   dio: ^3.0.10
-
-  # our libraries module
-  shared:
-    path: ../shared
+  bloc: ^6.0.3
 
 dev_dependencies:
   flutter_test:

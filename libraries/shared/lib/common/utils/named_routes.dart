@@ -1,5 +1,7 @@
 class NamedRoutes {
   String splashPage = "/splash";
-  String featureListPokemon = "/feature_list_pokemon";
-  String listPokemonPage = "/list_pokemon";
+
+  // list article features
+  String featureListArticle = "/feature_list_article";
+  String listArticlePage = "/list_article";
 }

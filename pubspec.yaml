@@ -39,6 +39,8 @@ dependencies:
     path: features/detail_news
 
   # our libraries module
+  core:
+    path: libraries/core
   shared:
     path: libraries/shared
 

@@ -1,1 +1,1 @@
-export 'card/card_pokemon.dart';
+export 'card/card_article.dart';

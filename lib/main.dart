@@ -9,8 +9,8 @@ void main() => runApp(ModularApp(module: AppModule()));
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        Bind((_) => NamedRoutes()),
         Bind((_) => ImageAssets()),
+        Bind((_) => NamedRoutes()),
       ];
 
   @override
@@ -23,7 +23,7 @@ class AppModule extends MainModule {
           child: (context, args) => SplashPage(),
         ),
         ModularRouter(
-          Modular.get<NamedRoutes>().featureListPokemon,
+          Modular.get<NamedRoutes>().featureListArticle,
           module: FeatureListNews(),
         ),
       ];
