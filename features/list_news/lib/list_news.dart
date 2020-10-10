@@ -1,4 +1,3 @@
-import 'package:core/network/api_constant.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/data/remote/datasource/article_data_source.dart';
@@ -13,9 +12,6 @@ import 'package:shared/common/common.dart';
 class FeatureListNews extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((_) => ApiConstant()),
-        Bind((_) =>
-            Dio(BaseOptions(baseUrl: Modular.get<ApiConstant>().baseUrlDebug))),
         Bind((_) => ArticleApi(dio: Modular.get<Dio>())),
         Bind((_) => ArticleRepositoryImpl(
             articleDataSource: Modular.get<ArticleDataSource>())),

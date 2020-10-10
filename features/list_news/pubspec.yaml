@@ -18,8 +18,6 @@ dependencies:
   flutter_bloc: ^6.0.6
 
   #our libraries module
-  core:
-    path: ../../libraries/core
   shared:
     path: ../../libraries/shared
 

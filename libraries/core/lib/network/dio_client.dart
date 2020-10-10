@@ -10,12 +10,12 @@ class DioClient {
   Dio get dio => _getDio();
 
   Dio _getDio() {
-    BaseOptions options = new BaseOptions(
+    BaseOptions options = BaseOptions(
       baseUrl: apiBaseUrl,
       connectTimeout: 50000,
       receiveTimeout: 30000,
     );
-    Dio dio = new Dio(options);
+    Dio dio = Dio(options);
     dio.interceptors.addAll(<Interceptor>[_loggingInterceptor()]);
 
     return dio;
@@ -28,8 +28,6 @@ class DioClient {
           "Request ${options.uri} \n"
           "-- headers --\n"
           "${options.headers.toString()} \n"
-          "-- payload --\n  x"
-          "${jsonEncode(options.data)} \n"
           "");
 
       return options; //continue

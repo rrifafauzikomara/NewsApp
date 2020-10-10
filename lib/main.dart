@@ -1,17 +1,21 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/list_news.dart';
 import 'package:news_app/splash_page.dart';
 import 'package:shared/common/common.dart';
+import 'package:shared/shared.dart';
 
-void main() => runApp(ModularApp(module: AppModule()));
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Modular.init(CoreModule());
+  Modular.init(SharedModule());
+  runApp(ModularApp(module: AppModule()));
+}
 
 class AppModule extends MainModule {
   @override
-  List<Bind> get binds => [
-        Bind((_) => ImageAssets()),
-        Bind((_) => NamedRoutes()),
-      ];
+  List<Bind> get binds => [];
 
   @override
   Widget get bootstrap => MyApp();
