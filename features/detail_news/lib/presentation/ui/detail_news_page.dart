@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
@@ -15,7 +16,7 @@ class DetailNewsPage extends StatelessWidget {
         children: [
           article.urlToImage == null
               ? Container(
-                  height: 200,
+                  height: 200.h,
                   child: Icon(Icons.error),
                 )
               : Hero(
@@ -47,7 +48,7 @@ class DetailNewsPage extends StatelessWidget {
                   'Date: ${article.publishedAt}',
                   style: Theme.of(context).textTheme.caption,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Text(
                   'Author: ${article.author}',
                   style: Theme.of(context).textTheme.caption,
@@ -57,7 +58,7 @@ class DetailNewsPage extends StatelessWidget {
                   article.content ?? "",
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 RaisedButton(
                   child: Text('Read more'),
                   onPressed: () {},

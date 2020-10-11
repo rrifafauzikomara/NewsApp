@@ -33,6 +33,7 @@ dependencies:
   package_info: ^0.4.3
   json_serializable: ^3.5.0
   bloc: ^6.0.3
+  flutter_screenutil: ^3.1.1
 
   # our features module
   list_news:

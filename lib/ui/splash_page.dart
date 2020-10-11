@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:package_info/package_info.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared/common/common.dart';
 
 class SplashPage extends StatefulWidget {
@@ -33,14 +34,18 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Set the value of width : 1080px , height:1920px and set the font size is
+    // scaled according to the system's "font size" assist option
+    ScreenUtil.init(context,
+        designSize: Size(750, 1334), allowFontScaling: true);
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
             Center(
               child: SizedBox(
-                height: 100,
-                width: 100,
+                height: 200.h,
+                width: 200.w,
                 child: SvgPicture.asset(
                   ImageAssets.logo,
                 ),
