@@ -22,8 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _navigationPage() {
-    Modular.to
-        .pushReplacementNamed(Modular.get<NamedRoutes>().featureListArticle);
+    Modular.to.pushReplacementNamed(Modular.get<NamedRoutes>().listArticlePage);
   }
 
   @override

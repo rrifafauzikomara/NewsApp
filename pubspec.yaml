@@ -36,6 +36,8 @@ dependencies:
   # our features module
   list_news:
     path: features/list_news
+  detail_news:
+    path: features/detail_news
 
   # our libraries module
   core:

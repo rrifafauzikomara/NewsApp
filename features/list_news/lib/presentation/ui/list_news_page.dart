@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/presentation/bloc/bloc.dart';
+import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
 class ListNewsPage extends StatelessWidget {
@@ -17,7 +18,9 @@ class ListNewsPage extends StatelessWidget {
               var article = state.data.articles[index];
               return CardArticle(
                 article: article,
-                onPressed: () {},
+                onPressed: () => Modular.to.pushNamed(
+                    Modular.get<NamedRoutes>().detailArticlePage,
+                    arguments: article),
               );
             },
           );
