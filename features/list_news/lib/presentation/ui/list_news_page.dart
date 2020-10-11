@@ -41,10 +41,8 @@ class ListNewsPage extends StatelessWidget {
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('News App', style: TextStyle(color: Colors.black)),
+        title: Text('News App'),
       ),
       body: _buildList(),
     );
@@ -52,10 +50,8 @@ class ListNewsPage extends StatelessWidget {
 
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: Colors.white,
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: Colors.white,
-        middle: Text('News App', style: TextStyle(color: Colors.black)),
+        middle: Text('News App'),
       ),
       child: _buildList(),
     );

@@ -38,12 +38,12 @@ class DetailNewsPage extends StatelessWidget {
                   article.description ?? "",
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
-                Divider(color: Colors.grey),
+                Divider(),
                 Text(
                   article.title ?? "",
                   style: Theme.of(context).textTheme.headline6,
                 ),
-                Divider(color: Colors.grey),
+                Divider(),
                 Text(
                   'Date: ${article.publishedAt}',
                   style: Theme.of(context).textTheme.caption,
@@ -53,7 +53,7 @@ class DetailNewsPage extends StatelessWidget {
                   'Author: ${article.author}',
                   style: Theme.of(context).textTheme.caption,
                 ),
-                Divider(color: Colors.grey),
+                Divider(),
                 Text(
                   article.content ?? "",
                   style: Theme.of(context).textTheme.bodyText1,
@@ -73,10 +73,8 @@ class DetailNewsPage extends StatelessWidget {
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('News App', style: TextStyle(color: Colors.black)),
+        title: Text('News App'),
       ),
       body: _buildBody(context),
     );
@@ -84,12 +82,10 @@ class DetailNewsPage extends StatelessWidget {
 
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: Colors.white,
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: Colors.white,
-        middle: Text('News App', style: TextStyle(color: Colors.black)),
+        middle: Text('News App'),
       ),
-      child: _buildBody(context),
+      child: SafeArea(child: _buildBody(context)),
     );
   }
 

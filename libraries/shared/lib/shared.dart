@@ -6,6 +6,7 @@ class SharedModule extends ChildModule {
   List<Bind> get binds => [
         Bind((_) => ImageAssets()),
         Bind((_) => NamedRoutes()),
+        Bind((_) => ColorPalettes()),
       ];
 
   @override

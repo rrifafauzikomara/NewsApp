@@ -1,2 +1,2 @@
-export 'utils/images_assets.dart';
-export 'utils/named_routes.dart';
+export 'styles/styles.dart';
+export 'utils/utils.dart';
