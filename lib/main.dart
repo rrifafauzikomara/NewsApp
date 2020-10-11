@@ -1,13 +1,16 @@
+import 'package:bloc/bloc.dart';
 import 'package:core/core.dart';
 import 'package:detail_news/detail_news.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/list_news.dart';
-import 'package:news_app/splash_page.dart';
+import 'package:news_app/bloc/news_bloc_observer.dart';
+import 'package:news_app/ui/splash_page.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/shared.dart';
 
 void main() {
+  Bloc.observer = NewsBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   Modular.init(CoreModule());
   Modular.init(SharedModule());

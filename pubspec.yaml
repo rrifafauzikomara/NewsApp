@@ -32,6 +32,7 @@ dependencies:
   flutter_svg: ^0.19.0
   package_info: ^0.4.3
   json_serializable: ^3.5.0
+  bloc: ^6.0.3
 
   # our features module
   list_news:
