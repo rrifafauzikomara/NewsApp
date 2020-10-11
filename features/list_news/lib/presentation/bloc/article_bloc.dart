@@ -1,5 +1,6 @@
+import 'dart:io';
+import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:list_news/domain/usecase/article_usecase.dart';
 import 'package:list_news/presentation/bloc/article_event.dart';
@@ -26,14 +27,12 @@ class ArticleBloc extends Bloc<ResultEvent, ResultState> {
       } else {
         yield HasData(data: article);
       }
-    } on DioError catch (e) {
-      if (e.type == DioErrorType.CONNECT_TIMEOUT ||
-          e.type == DioErrorType.RECEIVE_TIMEOUT ||
-          e.type == DioErrorType.DEFAULT) {
-        yield NoInternetConnection(message: 'No Internet Connection');
-      } else {
-        yield Error(message: e.toString());
-      }
+    } on IOException {
+      yield NoInternetConnection(message: 'No Internet Connection');
+    } on TimeoutException {
+      yield NoInternetConnection(message: 'No Internet Connection');
+    } catch (e) {
+      yield Error(message: e.toString());
     }
   }
 }

@@ -37,16 +37,21 @@ class DioClient {
       // you can return a `DioError` object or return `dio.reject(errMsg)`
     }, onResponse: (Response response) {
       // Do something with response data
-      debugPrint("\n"
-          "Response ${response.request.uri} \n"
-          "-- headers --\n"
-          "${response.headers.toString()} \n"
-          "-- payload --\n"
-          "${jsonEncode(response.data)} \n"
-          "");
+      if (response.statusCode == 200) {
+        debugPrint("\n"
+            "Response ${response.request.uri} \n"
+            "-- headers --\n"
+            "${response.headers.toString()} \n"
+            "-- payload --\n"
+            "${jsonEncode(response.data)} \n"
+            "");
+      } else {
+        debugPrint("Dio Response Status --> ${response.statusCode}");
+      }
       return response; // continue
     }, onError: (DioError e) {
       // Do something with response error
+      debugPrint("Dio Response Error --> $e");
       return e; //continue
     });
   }

@@ -27,11 +27,11 @@ class ListNewsPage extends StatelessWidget {
         } else if (state is Loading) {
           return Center(child: CircularProgressIndicator());
         } else if (state is Error) {
-          return Text(state.message);
+          return Center(child: Text(state.message));
         } else if (state is NoData) {
-          return Text(state.message);
+          return Center(child: Text(state.message));
         } else if (state is NoInternetConnection) {
-          return Text(state.message);
+          return Center(child: Text(state.message));
         } else {
           return Center(child: Text(""));
         }
@@ -53,7 +53,7 @@ class ListNewsPage extends StatelessWidget {
       navigationBar: CupertinoNavigationBar(
         middle: Text('News App'),
       ),
-      child: _buildList(),
+      child: SafeArea(child: _buildList()),
     );
   }
 
