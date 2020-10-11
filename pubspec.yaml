@@ -40,6 +40,8 @@ dependencies:
     path: features/list_news
   detail_news:
     path: features/detail_news
+  settings:
+    path: features/settings
 
   # our libraries module
   core:

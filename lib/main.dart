@@ -9,6 +9,7 @@ import 'package:news_app/bloc/news_bloc_observer.dart';
 import 'package:news_app/ui/splash_page.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/shared.dart';
+import 'package:settings/settings.dart';
 
 void main() {
   Bloc.observer = NewsBlocObserver();
@@ -38,6 +39,10 @@ class AppModule extends MainModule {
         ModularRouter(
           Modular.get<NamedRoutes>().detailArticlePage,
           module: FeatureDetailNews(),
+        ),
+        ModularRouter(
+          Modular.get<NamedRoutes>().settingsPage,
+          module: FeatureSettingsModule(),
         ),
       ];
 }

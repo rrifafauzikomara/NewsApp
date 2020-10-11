@@ -6,4 +6,7 @@ class NamedRoutes {
 
   // detail article feature
   String detailArticlePage = "/detail_article";
+
+  // settings
+  String settingsPage = "/settings";
 }
