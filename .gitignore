@@ -1,3 +1,5 @@
+*.g.dart
+
 # Miscellaneous
 *.class
 *.log

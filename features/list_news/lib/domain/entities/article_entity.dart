@@ -1,52 +1,59 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'article_entity.g.dart';
+
+@JsonSerializable()
 class ArticleResult implements Equatable {
+  @JsonKey(name: 'articles')
   final List<Article> articles;
 
-  ArticleResult({
-    this.articles,
-  });
-
-  factory ArticleResult.fromJson(Map<String, dynamic> json) => ArticleResult(
-        articles: List<Article>.from(
-            json["articles"].map((x) => Article.fromJson(x))),
-      );
+  ArticleResult({@required this.articles});
 
   @override
   List<Object> get props => [articles];
 
   @override
   bool get stringify => null;
+
+  factory ArticleResult.fromJson(Map<String, dynamic> json) =>
+      _$ArticleResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ArticleResultToJson(this);
 }
 
+@JsonSerializable()
 class Article implements Equatable {
-  Article({
-    this.author,
-    this.title,
-    this.description,
-    this.url,
-    this.urlToImage,
-    this.publishedAt,
-    this.content,
-  });
-
+  @JsonKey(name: 'author')
   final String author;
+
+  @JsonKey(name: 'title')
   final String title;
+
+  @JsonKey(name: 'description')
   final String description;
+
+  @JsonKey(name: 'url')
   final String url;
+
+  @JsonKey(name: 'urlToImage')
   final String urlToImage;
-  final DateTime publishedAt;
+
+  @JsonKey(name: 'publishedAt')
+  final String publishedAt;
+
+  @JsonKey(name: 'content')
   final String content;
 
-  factory Article.fromJson(Map<String, dynamic> json) => Article(
-        author: json["author"],
-        title: json["title"],
-        description: json["description"],
-        url: json["url"],
-        urlToImage: json["urlToImage"],
-        publishedAt: DateTime.parse(json["publishedAt"]),
-        content: json["content"] == null ? null : json["content"],
-      );
+  Article(
+      {this.author,
+      this.title,
+      this.description,
+      this.url,
+      this.urlToImage,
+      this.publishedAt,
+      this.content});
 
   @override
   List<Object> get props =>
@@ -54,4 +61,9 @@ class Article implements Equatable {
 
   @override
   bool get stringify => null;
+
+  factory Article.fromJson(Map<String, dynamic> json) =>
+      _$ArticleFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ArticleToJson(this);
 }
