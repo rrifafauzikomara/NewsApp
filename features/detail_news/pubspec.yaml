@@ -1,4 +1,4 @@
-name: list_news
+name: detail_news
 description: A new Flutter package.
 version: 0.0.1
 author:
@@ -12,23 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_modular: ^2.0.1
-  equatable: ^1.2.5
-  json_serializable: ^3.5.0
-  dio: ^3.0.10
-  bloc: ^6.0.3
-  flutter_bloc: ^6.0.6
-
-  detail_news:
-    path: ../detail_news
-
-  #our libraries module
-  shared:
-    path: ../../libraries/shared
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
