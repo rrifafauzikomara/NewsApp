@@ -38,6 +38,10 @@ class AppModule extends MainModule {
           child: (context, args) => SplashPage(),
         ),
         ModularRouter(
+          Modular.get<NamedRoutes>().homePage,
+          module: FeatureHomeModule(),
+        ),
+        ModularRouter(
           Modular.get<NamedRoutes>().listArticlePage,
           module: FeatureListNews(),
         ),
@@ -48,10 +52,6 @@ class AppModule extends MainModule {
         ModularRouter(
           Modular.get<NamedRoutes>().settingsPage,
           module: FeatureSettingsModule(),
-        ),
-        ModularRouter(
-          Modular.get<NamedRoutes>().homePage,
-          module: FeatureHomeModule(),
         ),
       ];
 }
