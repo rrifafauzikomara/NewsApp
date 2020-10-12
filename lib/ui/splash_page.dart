@@ -23,7 +23,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _navigationPage() {
-    Modular.to.pushReplacementNamed(Modular.get<NamedRoutes>().listArticlePage);
+    Modular.to.pushReplacementNamed(Modular.get<NamedRoutes>().homePage);
   }
 
   @override
@@ -65,7 +65,7 @@ class _SplashPageState extends State<SplashPage> {
                     margin: EdgeInsets.only(bottom: 30),
                     child: Text(
                       verInfo,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.subtitle1,
                     ),
                   );
                 },

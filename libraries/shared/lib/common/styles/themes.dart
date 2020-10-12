@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/common/styles/color_palettes.dart';
 
-// TODO: buat untuk iOS
+// Styling for text
 final TextTheme _myTextThemeAndroid = TextTheme(
   headline1:
       TextStyle(fontSize: 92, fontWeight: FontWeight.w300, letterSpacing: -1.5),
@@ -30,6 +30,7 @@ final TextTheme _myTextThemeAndroid = TextTheme(
       TextStyle(fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
 );
 
+// Styling for light theme
 ThemeData lightThemeAndroid = ThemeData(
   fontFamily: 'IBMPlexSans',
   backgroundColor: ColorPalettes.lightBG,
@@ -40,7 +41,7 @@ ThemeData lightThemeAndroid = ThemeData(
   scaffoldBackgroundColor: ColorPalettes.lightBG,
   textTheme: _myTextThemeAndroid,
   appBarTheme: AppBarTheme(
-    textTheme: _myTextThemeAndroid.apply(bodyColor: ColorPalettes.lightPrimary),
+    textTheme: _myTextThemeAndroid.apply(bodyColor: ColorPalettes.darkPrimary),
     elevation: 0,
   ),
   buttonTheme: ButtonThemeData(
@@ -54,6 +55,7 @@ ThemeData lightThemeAndroid = ThemeData(
   ),
 );
 
+// Styling for dark theme
 ThemeData darkThemeAndroid = ThemeData(
   fontFamily: 'IBMPlexSans',
   brightness: Brightness.dark,
@@ -65,7 +67,7 @@ ThemeData darkThemeAndroid = ThemeData(
   cursorColor: ColorPalettes.darkAccent,
   textTheme: _myTextThemeAndroid,
   appBarTheme: AppBarTheme(
-    textTheme: _myTextThemeAndroid.apply(bodyColor: ColorPalettes.darkPrimary),
+    textTheme: _myTextThemeAndroid.apply(bodyColor: ColorPalettes.lightPrimary),
     elevation: 0,
   ),
   buttonTheme: ButtonThemeData(

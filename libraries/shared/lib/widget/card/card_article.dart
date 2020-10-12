@@ -19,7 +19,7 @@ class CardArticle extends StatelessWidget {
         leading: article.urlToImage == null
             ? Container(width: 200.w, child: Icon(Icons.error))
             : Hero(
-                tag: article.urlToImage,
+                tag: article.url,
                 child: CachedNetworkImage(
                   imageUrl: article.urlToImage,
                   width: 200.w,

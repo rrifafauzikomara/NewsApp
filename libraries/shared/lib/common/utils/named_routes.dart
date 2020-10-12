@@ -9,4 +9,7 @@ class NamedRoutes {
 
   // settings
   String settingsPage = "/settings";
+
+  // home
+  String homePage = "/home";
 }
