@@ -57,7 +57,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'News',
-      theme: lightThemeAndroid,
+      theme: darkTheme,
+      builder: (context, child) {
+        return CupertinoTheme(
+          data: CupertinoThemeData(
+            brightness: Brightness.dark,
+          ),
+          child: Material(
+            child: child,
+          ),
+        );
+      },
       debugShowCheckedModeBanner: false,
       initialRoute: Modular.get<NamedRoutes>().splashPage,
       navigatorKey: Modular.navigatorKey,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared/common/styles/color_palettes.dart';
 
 // Styling for text
-final TextTheme _myTextThemeAndroid = TextTheme(
+final TextTheme _myTextTheme = TextTheme(
   headline1:
       TextStyle(fontSize: 92, fontWeight: FontWeight.w300, letterSpacing: -1.5),
   headline2:
@@ -31,7 +31,7 @@ final TextTheme _myTextThemeAndroid = TextTheme(
 );
 
 // Styling for light theme
-ThemeData lightThemeAndroid = ThemeData(
+ThemeData lightTheme = ThemeData(
   fontFamily: 'IBMPlexSans',
   backgroundColor: ColorPalettes.lightBG,
   primaryColor: ColorPalettes.lightPrimary,
@@ -39,10 +39,14 @@ ThemeData lightThemeAndroid = ThemeData(
   cursorColor: ColorPalettes.lightAccent,
   dividerColor: ColorPalettes.darkBG,
   scaffoldBackgroundColor: ColorPalettes.lightBG,
-  textTheme: _myTextThemeAndroid,
+  textTheme: _myTextTheme,
   appBarTheme: AppBarTheme(
-    textTheme: _myTextThemeAndroid.apply(bodyColor: ColorPalettes.darkPrimary),
+    textTheme: _myTextTheme.apply(bodyColor: ColorPalettes.darkPrimary),
     elevation: 0,
+  ),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    selectedItemColor: ColorPalettes.lightAccent,
+    unselectedItemColor: Colors.grey,
   ),
   buttonTheme: ButtonThemeData(
     buttonColor: ColorPalettes.lightAccent,
@@ -56,7 +60,7 @@ ThemeData lightThemeAndroid = ThemeData(
 );
 
 // Styling for dark theme
-ThemeData darkThemeAndroid = ThemeData(
+ThemeData darkTheme = ThemeData(
   fontFamily: 'IBMPlexSans',
   brightness: Brightness.dark,
   backgroundColor: ColorPalettes.darkBG,
@@ -65,10 +69,14 @@ ThemeData darkThemeAndroid = ThemeData(
   dividerColor: ColorPalettes.lightPrimary,
   scaffoldBackgroundColor: ColorPalettes.darkBG,
   cursorColor: ColorPalettes.darkAccent,
-  textTheme: _myTextThemeAndroid,
+  textTheme: _myTextTheme,
   appBarTheme: AppBarTheme(
-    textTheme: _myTextThemeAndroid.apply(bodyColor: ColorPalettes.lightPrimary),
+    textTheme: _myTextTheme.apply(bodyColor: ColorPalettes.lightPrimary),
     elevation: 0,
+  ),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    selectedItemColor: ColorPalettes.darkAccent,
+    unselectedItemColor: Colors.grey,
   ),
   buttonTheme: ButtonThemeData(
     buttonColor: ColorPalettes.darkAccent,
