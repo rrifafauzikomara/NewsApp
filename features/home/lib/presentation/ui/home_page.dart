@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/presentation/ui/list_news_page.dart';
-import 'package:settings/presentation/ui/settings_page.dart';
+import 'package:bookmark/presentation/ui/bookmark_page.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> _listWidget = [
     Modular.get<ListNewsPage>(),
-    Modular.get<SettingsPage>(),
+    Modular.get<BookmarkPage>(),
   ];
 
   List<BottomNavigationBarItem> _bottomNavBarItems = [
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       label: Modular.get<LocaleKeys>().navBar1.tr(),
     ),
     BottomNavigationBarItem(
-      icon: Icon(Platform.isIOS ? CupertinoIcons.settings : Icons.settings),
+      icon: Icon(Platform.isIOS ? CupertinoIcons.bookmark : Icons.bookmark),
       label: Modular.get<LocaleKeys>().navBar2.tr(),
     ),
   ];

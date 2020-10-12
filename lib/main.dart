@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bookmark/bookmark.dart';
 import 'package:core/core.dart';
 import 'package:detail_news/detail_news.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -48,6 +49,10 @@ class AppModule extends MainModule {
         ModularRouter(
           Modular.get<NamedRoutes>().detailArticlePage,
           module: FeatureDetailNews(),
+        ),
+        ModularRouter(
+          Modular.get<NamedRoutes>().bookmarkPage,
+          module: FeatureBookmarkModule(),
         ),
         ModularRouter(
           Modular.get<NamedRoutes>().settingsPage,

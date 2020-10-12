@@ -1,7 +1,7 @@
 {
   "home": {
     "navBar1": "Judul",
-    "navBar2": "Pengaturan"
+    "navBar2": "Penanda Buku"
   },
   "listNews": {
     "title": "Berita"
@@ -9,6 +9,9 @@
   "detailNews": {
     "title": "Berita",
     "readMore": "Baca Lebih Lajut"
+  },
+  "bookmark": {
+    "title": "Penanda Buku"
   },
   "settings": {
     "title": "Pengaturan",

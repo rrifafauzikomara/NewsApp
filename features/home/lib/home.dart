@@ -8,7 +8,7 @@ import 'package:list_news/domain/repositories/article_repository.dart';
 import 'package:list_news/domain/usecase/article_usecase.dart';
 import 'package:list_news/presentation/bloc/bloc.dart';
 import 'package:list_news/presentation/ui/list_news_page.dart';
-import 'package:settings/presentation/ui/settings_page.dart';
+import 'package:bookmark/presentation/ui/bookmark_page.dart';
 import 'package:shared/common/common.dart';
 
 class FeatureHomeModule extends ChildModule {
@@ -21,7 +21,7 @@ class FeatureHomeModule extends ChildModule {
         Bind((_) => ArticleUseCaseImpl(
             articleRepository: Modular.get<ArticleRepository>())),
         Bind((_) => ArticleBloc(articleUseCase: Modular.get<ArticleUseCase>())),
-        Bind((_) => SettingsPage()),
+        Bind((_) => BookmarkPage()),
       ];
 
   @override

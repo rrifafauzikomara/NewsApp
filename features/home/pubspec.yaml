@@ -17,8 +17,8 @@ dependencies:
 
   list_news:
     path: ../list_news
-  settings:
-    path: ../settings
+  bookmark:
+    path: ../bookmark
 
   shared:
     path: ../../libraries/shared

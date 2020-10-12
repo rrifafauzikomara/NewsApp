@@ -45,6 +45,8 @@ dependencies:
     path: features/settings
   home:
     path: features/home
+  bookmark:
+    path: features/bookmark
 
   # our libraries module
   core:

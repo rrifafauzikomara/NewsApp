@@ -1,7 +1,16 @@
-library bookmark;
+import 'package:bookmark/presentation/ui/bookmark_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shared/common/common.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+class FeatureBookmarkModule extends ChildModule {
+  @override
+  List<Bind> get binds => [];
+
+  @override
+  List<ModularRouter> get routers => [
+        ModularRouter(
+          Modular.get<NamedRoutes>().bookmarkPage,
+          child: (context, arg) => BookmarkPage(),
+        ),
+      ];
 }

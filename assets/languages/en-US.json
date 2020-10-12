@@ -1,7 +1,7 @@
 {
   "home": {
     "navBar1": "Headline",
-    "navBar2": "Settings"
+    "navBar2": "Bookmark"
   },
   "listNews": {
     "title": "News"
@@ -9,6 +9,9 @@
   "detailNews": {
     "title": "News",
     "readMore": "Read More"
+  },
+  "bookmark": {
+    "title": "Bookmark"
   },
   "settings": {
     "title": "Settings",

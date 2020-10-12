@@ -52,10 +52,7 @@ class _SplashPageState extends State<SplashPage> {
                 }
                 return Container(
                   margin: EdgeInsets.only(bottom: 30),
-                  child: Text(
-                    verInfo,
-                    style: Theme.of(context).textTheme.subtitle1,
-                  ),
+                  child: Text(verInfo),
                 );
               },
             ),

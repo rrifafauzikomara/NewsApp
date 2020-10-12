@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.3"
+  bookmark:
+    dependency: "direct main"
+    description:
+      path: "../bookmark"
+      relative: true
+    source: path
+    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -441,13 +448,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.24.1"
-  settings:
-    dependency: "direct main"
-    description:
-      path: "../settings"
-      relative: true
-    source: path
-    version: "0.0.1"
   shared:
     dependency: "direct main"
     description:

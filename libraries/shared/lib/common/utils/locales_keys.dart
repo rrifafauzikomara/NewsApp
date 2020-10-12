@@ -10,6 +10,9 @@ class LocaleKeys {
   String detailNewsTitle = "detailNews.title";
   String btnReadMore = "detailNews.readMore";
 
+  // bookmark
+  String bookmarkTitle = "bookmark.title";
+
   // setting
   String settingTitle = "settings.title";
   String settingTheme = "settings.theme";
