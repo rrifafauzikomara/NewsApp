@@ -34,6 +34,7 @@ dependencies:
   json_serializable: ^3.5.0
   bloc: ^6.0.3
   flutter_screenutil: ^3.1.1
+  easy_localization: ^2.3.3
 
   # our features module
   list_news:
@@ -69,6 +70,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/languages/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,0 +1,18 @@
+{
+  "home": {
+    "navBar1": "Headline",
+    "navBar2": "Settings"
+  },
+  "listNews": {
+    "title": "News"
+  },
+  "detailNews": {
+    "title": "News",
+    "readMore": "Read More"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Dark Theme",
+    "language": "Language"
+  }
+}

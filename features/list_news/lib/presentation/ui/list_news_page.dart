@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/presentation/bloc/bloc.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
 class ListNewsPage extends StatelessWidget {
-  static const String title = 'News App';
-
   Widget _buildList() {
     return BlocBuilder<ArticleBloc, ResultState>(
       builder: (context, state) {
@@ -44,7 +43,7 @@ class ListNewsPage extends StatelessWidget {
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(Modular.get<LocaleKeys>().listNewsTitle.tr()),
       ),
       body: _buildList(),
     );
@@ -53,7 +52,7 @@ class ListNewsPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(title),
+        middle: Text(Modular.get<LocaleKeys>().listNewsTitle.tr()),
       ),
       child: SafeArea(child: _buildList()),
     );

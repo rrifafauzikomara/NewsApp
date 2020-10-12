@@ -1,14 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
-class SettingsPage extends StatelessWidget {
-  static const String title = 'Settings';
+class SettingsPage extends StatefulWidget {
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  bool _isDarkTheme = false;
+  bool _isIndonesia = false;
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(Modular.get<LocaleKeys>().settingTitle.tr()),
       ),
       body: _buildBody(context),
     );
@@ -17,7 +26,7 @@ class SettingsPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(title),
+        middle: Text(Modular.get<LocaleKeys>().settingTitle.tr()),
       ),
       child: _buildBody(context),
     );
@@ -28,22 +37,33 @@ class SettingsPage extends StatelessWidget {
       children: [
         Material(
           child: ListTile(
-            title: Text('Dark Theme'),
+            title: Text(Modular.get<LocaleKeys>().settingTheme.tr()),
             trailing: Switch.adaptive(
-              value: false,
+              value: _isDarkTheme,
               onChanged: (value) {
-                // print
+                setState(() {
+                  _isDarkTheme = value;
+                });
               },
             ),
           ),
         ),
         Material(
           child: ListTile(
-            title: Text('Language'),
+            title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
             trailing: Switch.adaptive(
-              value: false,
+              value: _isIndonesia,
               onChanged: (value) {
-                // print
+                setState(() {
+                  _isIndonesia = value;
+                  if (_isIndonesia) {
+                    context.locale =
+                        EasyLocalization.of(context).supportedLocales[1];
+                  } else {
+                    context.locale =
+                        EasyLocalization.of(context).supportedLocales[0];
+                  }
+                });
               },
             ),
           ),

@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
+import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
 class DetailNewsPage extends StatelessWidget {
@@ -10,27 +13,17 @@ class DetailNewsPage extends StatelessWidget {
 
   const DetailNewsPage({@required this.article});
 
-  static const String title = 'News App';
-
   Widget _buildBody(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          article.urlToImage == null
-              ? Container(
-                  height: 200.h,
-                  child: Icon(Icons.error),
-                )
-              : Hero(
-                  tag: article.url,
-                  child: CachedNetworkImage(
-                    imageUrl: article.urlToImage,
-                    placeholder: (context, url) =>
-                        Center(child: CircularProgressIndicator()),
-                    errorWidget: (context, url, error) =>
-                        Container(child: Icon(Icons.error)),
-                  ),
-                ),
+          CachedNetworkImage(
+            imageUrl: article.urlToImage,
+            placeholder: (context, url) =>
+                Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) =>
+                Container(child: Icon(Icons.error)),
+          ),
           Padding(
             padding: EdgeInsets.all(10),
             child: Column(
@@ -62,7 +55,7 @@ class DetailNewsPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 RaisedButton(
-                  child: Text('Read more'),
+                  child: Text(Modular.get<LocaleKeys>().btnReadMore.tr()),
                   onPressed: () {},
                 ),
               ],
@@ -76,7 +69,7 @@ class DetailNewsPage extends StatelessWidget {
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(Modular.get<LocaleKeys>().detailNewsTitle.tr()),
       ),
       body: _buildBody(context),
     );
@@ -85,7 +78,7 @@ class DetailNewsPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(title),
+        middle: Text(Modular.get<LocaleKeys>().detailNewsTitle.tr()),
       ),
       child: SafeArea(child: _buildBody(context)),
     );

@@ -1,0 +1,18 @@
+{
+  "home": {
+    "navBar1": "Judul",
+    "navBar2": "Pengaturan"
+  },
+  "listNews": {
+    "title": "Berita"
+  },
+  "detailNews": {
+    "title": "Berita",
+    "readMore": "Baca Lebih Lajut"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "theme": "Tema Gelap",
+    "language": "Bahasa"
+  }
+}

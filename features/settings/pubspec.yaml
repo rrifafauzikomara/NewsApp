@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_modular: ^2.0.1
+  easy_localization: ^2.3.3
 
   shared:
     path: ../../libraries/shared

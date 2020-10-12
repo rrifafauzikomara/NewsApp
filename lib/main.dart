@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:core/core.dart';
 import 'package:detail_news/detail_news.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -25,7 +26,10 @@ class AppModule extends MainModule {
   List<Bind> get binds => [];
 
   @override
-  Widget get bootstrap => MyApp();
+  Widget get bootstrap => EasyLocalization(
+      path: 'assets/languages',
+      supportedLocales: [Locale('en', 'US'), Locale('id', 'ID')],
+      child: MyApp());
 
   @override
   List<ModularRouter> get routers => [
@@ -56,22 +60,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News',
-      theme: darkTheme,
+      debugShowCheckedModeBanner: false,
+      title: Modular.get<LocaleKeys>().listNewsTitle.tr(),
+      theme: lightTheme,
       builder: (context, child) {
         return CupertinoTheme(
           data: CupertinoThemeData(
-            brightness: Brightness.dark,
+            brightness: Brightness.light,
           ),
           child: Material(
             child: child,
           ),
         );
       },
-      debugShowCheckedModeBanner: false,
       initialRoute: Modular.get<NamedRoutes>().splashPage,
       navigatorKey: Modular.navigatorKey,
       onGenerateRoute: Modular.generateRoute,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }

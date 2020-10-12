@@ -16,19 +16,14 @@ class CardArticle extends StatelessWidget {
       child: ListTile(
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-        leading: article.urlToImage == null
-            ? Container(width: 200.w, child: Icon(Icons.error))
-            : Hero(
-                tag: article.url,
-                child: CachedNetworkImage(
-                  imageUrl: article.urlToImage,
-                  width: 200.w,
-                  placeholder: (context, url) =>
-                      Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) =>
-                      Container(child: Icon(Icons.error)),
-                ),
-              ),
+        leading: CachedNetworkImage(
+          imageUrl: article.urlToImage,
+          width: 200.w,
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) =>
+              Container(child: Icon(Icons.error)),
+        ),
         title: Text(
           article.title ?? "",
         ),
