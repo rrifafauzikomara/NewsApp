@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared/common/styles/color_palettes.dart';
 
 // Styling for text
@@ -33,23 +34,24 @@ final TextTheme _myTextTheme = TextTheme(
 // Styling for light theme
 ThemeData lightTheme = ThemeData(
   fontFamily: 'IBMPlexSans',
-  backgroundColor: ColorPalettes.lightBG,
-  primaryColor: ColorPalettes.lightPrimary,
-  accentColor: ColorPalettes.lightAccent,
-  cursorColor: ColorPalettes.lightAccent,
-  dividerColor: ColorPalettes.darkBG,
-  scaffoldBackgroundColor: ColorPalettes.lightBG,
+  backgroundColor: Modular.get<ColorPalettes>().lightBG,
+  primaryColor: Modular.get<ColorPalettes>().lightPrimary,
+  accentColor: Modular.get<ColorPalettes>().lightAccent,
+  cursorColor: Modular.get<ColorPalettes>().lightAccent,
+  dividerColor: Modular.get<ColorPalettes>().darkBG,
+  scaffoldBackgroundColor: Modular.get<ColorPalettes>().lightBG,
   textTheme: _myTextTheme,
   appBarTheme: AppBarTheme(
-    textTheme: _myTextTheme.apply(bodyColor: ColorPalettes.darkPrimary),
+    textTheme:
+        _myTextTheme.apply(bodyColor: Modular.get<ColorPalettes>().darkPrimary),
     elevation: 0,
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    selectedItemColor: ColorPalettes.lightAccent,
+    selectedItemColor: Modular.get<ColorPalettes>().lightAccent,
     unselectedItemColor: Colors.grey,
   ),
   buttonTheme: ButtonThemeData(
-    buttonColor: ColorPalettes.lightAccent,
+    buttonColor: Modular.get<ColorPalettes>().lightAccent,
     textTheme: ButtonTextTheme.primary,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
@@ -63,23 +65,24 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   fontFamily: 'IBMPlexSans',
   brightness: Brightness.dark,
-  backgroundColor: ColorPalettes.darkBG,
-  primaryColor: ColorPalettes.darkPrimary,
-  accentColor: ColorPalettes.darkAccent,
-  dividerColor: ColorPalettes.lightPrimary,
-  scaffoldBackgroundColor: ColorPalettes.darkBG,
-  cursorColor: ColorPalettes.darkAccent,
+  backgroundColor: Modular.get<ColorPalettes>().darkBG,
+  primaryColor: Modular.get<ColorPalettes>().darkPrimary,
+  accentColor: Modular.get<ColorPalettes>().darkAccent,
+  dividerColor: Modular.get<ColorPalettes>().lightPrimary,
+  scaffoldBackgroundColor: Modular.get<ColorPalettes>().darkBG,
+  cursorColor: Modular.get<ColorPalettes>().darkAccent,
   textTheme: _myTextTheme,
   appBarTheme: AppBarTheme(
-    textTheme: _myTextTheme.apply(bodyColor: ColorPalettes.lightPrimary),
+    textTheme: _myTextTheme.apply(
+        bodyColor: Modular.get<ColorPalettes>().lightPrimary),
     elevation: 0,
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    selectedItemColor: ColorPalettes.darkAccent,
+    selectedItemColor: Modular.get<ColorPalettes>().darkAccent,
     unselectedItemColor: Colors.grey,
   ),
   buttonTheme: ButtonThemeData(
-    buttonColor: ColorPalettes.darkAccent,
+    buttonColor: Modular.get<ColorPalettes>().darkAccent,
     textTheme: ButtonTextTheme.primary,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(

@@ -37,7 +37,7 @@ class _SplashPageState extends State<SplashPage> {
               height: 200.h,
               width: 200.w,
               child: SvgPicture.asset(
-                ImageAssets.logo,
+                Modular.get<ImageAssets>().logo,
               ),
             ),
           ),

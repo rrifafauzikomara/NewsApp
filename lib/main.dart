@@ -16,7 +16,6 @@ import 'package:settings/settings.dart';
 
 void main() {
   Bloc.observer = NewsBlocObserver();
-  WidgetsFlutterBinding.ensureInitialized();
   Modular.init(CoreModule());
   Modular.init(SharedModule());
   runApp(ModularApp(module: AppModule()));
