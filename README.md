@@ -44,6 +44,7 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
     |
     └── libraries                # Name of directory
         ├── core                 # core module.
+        ├── dependencies         # dependencies module.
         └── shared               # shared module.
 
 
@@ -64,8 +65,6 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 
 
 ## Todo
-* [ ] Animation
-* [ ] Dependency module for handling version of dependencies
 * [ ] Dynamic Theme (Light and Dark by App)
 * [ ] Localization by App (ID, EN)
 * [ ] Favorite News using Moor
