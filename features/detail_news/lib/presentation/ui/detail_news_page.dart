@@ -1,12 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:list_news/domain/entities/article_entity.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
+import 'package:dependencies/dependencies.dart';
+import 'package:list_news/domain/entities/article_entity.dart';
 
 class DetailNewsPage extends StatelessWidget {
   final ArticleEntity article;

@@ -1,5 +1,5 @@
 import 'package:bookmark/presentation/ui/bookmark_page.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:shared/common/common.dart';
 
 class FeatureBookmarkModule extends ChildModule {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 

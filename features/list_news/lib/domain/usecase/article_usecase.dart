@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
 import 'package:list_news/domain/repositories/article_repository.dart';
 

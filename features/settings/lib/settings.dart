@@ -1,6 +1,6 @@
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:settings/presentation/ui/settings_page.dart';
-import 'package:shared/common/utils/named_routes.dart';
+import 'package:shared/common/common.dart';
 
 class FeatureSettingsModule extends ChildModule {
   @override

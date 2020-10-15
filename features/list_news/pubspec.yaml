@@ -11,18 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_modular: ^2.0.1
-  equatable: ^1.2.5
+
   json_serializable: ^3.5.0
-  dio: ^3.0.10
-  bloc: ^6.0.3
-  flutter_bloc: ^6.0.6
-  easy_localization: ^2.3.3
 
   detail_news:
     path: ../detail_news
 
-  #our libraries module
+  dependencies:
+    path: ../../libraries/dependencies
   shared:
     path: ../../libraries/shared
 

@@ -11,15 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_modular: ^2.0.1
-  dio: ^3.0.10
-  easy_localization: ^2.3.3
 
   list_news:
     path: ../list_news
   bookmark:
     path: ../bookmark
 
+  dependencies:
+    path: ../../libraries/dependencies
   shared:
     path: ../../libraries/shared
 

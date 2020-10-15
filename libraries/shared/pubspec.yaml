@@ -11,12 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_modular: ^2.0.1
-  cached_network_image: ^2.3.2+1
-  flutter_screenutil: ^3.1.1
 
   list_news:
     path: ../../features/list_news
+
+  dependencies:
+    path: ../dependencies
 
 dev_dependencies:
   flutter_test:

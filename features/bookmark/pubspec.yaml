@@ -11,9 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_modular: ^2.0.1
-  easy_localization: ^2.3.3
 
+  dependencies:
+    path: ../../libraries/dependencies
   shared:
     path: ../../libraries/shared
 

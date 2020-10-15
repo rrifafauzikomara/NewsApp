@@ -1,6 +1,6 @@
 import 'package:core/network/api_constant.dart';
 import 'package:core/network/dio_client.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:dependencies/dependencies.dart';
 
 class CoreModule extends ChildModule {
   @override

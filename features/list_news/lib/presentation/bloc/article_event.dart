@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+import 'package:dependencies/dependencies.dart';
 
 abstract class ResultEvent extends Equatable {
   const ResultEvent();

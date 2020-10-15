@@ -1,4 +1,4 @@
-name: core
+name: dependencies
 description: A new Flutter package.
 version: 0.0.1
 author:
@@ -12,8 +12,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-  dependencies:
-    path: ../dependencies
+  flutter_modular: ^2.0.1
+  flutter_svg: ^0.19.0
+  package_info: ^0.4.3
+  bloc: ^6.0.3
+  flutter_screenutil: ^3.1.1
+  easy_localization: ^2.3.3
+  cached_network_image: ^2.3.2+1
+  dio: ^3.0.10
+  equatable: ^1.2.5
+  flutter_bloc: ^6.0.6
 
 dev_dependencies:
   flutter_test:

@@ -30,7 +30,7 @@ packages:
     source: hosted
     version: "2.5.0-nullsafety.1"
   bloc:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: bloc
       url: "https://pub.dartlang.org"
@@ -169,6 +169,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.5"
+  cupertino_icons:
+    dependency: transitive
+    description:
+      name: cupertino_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
   dart_style:
     dependency: transitive
     description:
@@ -176,6 +183,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.7"
+  dependencies:
+    dependency: "direct main"
+    description:
+      path: "../../libraries/dependencies"
+      relative: true
+    source: path
+    version: "0.0.1"
   detail_news:
     dependency: "direct main"
     description:
@@ -184,21 +198,21 @@ packages:
     source: path
     version: "0.0.1"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.10"
   easy_localization:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: easy_localization
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.3.3"
   equatable:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: equatable
       url: "https://pub.dartlang.org"
@@ -238,7 +252,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_bloc:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_bloc
       url: "https://pub.dartlang.org"
@@ -264,7 +278,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_modular:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_modular
       url: "https://pub.dartlang.org"
@@ -277,6 +291,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.1"
+  flutter_svg:
+    dependency: transitive
+    description:
+      name: flutter_svg
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.19.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -420,6 +441,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.3"
+  package_info:
+    dependency: transitive
+    description:
+      name: package_info
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.3"
   path:
     dependency: transitive
     description:
@@ -427,6 +455,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1+1"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.4"
   path_provider:
     dependency: transitive
     description:
@@ -469,6 +511,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.2"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   platform:
     dependency: transitive
     description:
@@ -733,6 +782,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.5.1"
   yaml:
     dependency: transitive
     description:

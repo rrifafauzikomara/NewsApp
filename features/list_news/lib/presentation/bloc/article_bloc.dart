@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:async';
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:list_news/domain/usecase/article_usecase.dart';
 import 'package:list_news/presentation/bloc/article_event.dart';
 import 'package:list_news/presentation/bloc/article_state.dart';

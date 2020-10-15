@@ -1,5 +1,5 @@
-import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:list_news/data/remote/datasource/article_data_source.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
 
