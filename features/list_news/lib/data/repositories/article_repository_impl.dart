@@ -9,5 +9,6 @@ class ArticleRepositoryImpl extends ArticleRepository {
   ArticleRepositoryImpl({@required this.articleDataSource});
 
   @override
-  Future<ArticleResult> getListArticle() => articleDataSource.getListArticle();
+  Future<ArticleResultEntity> getListArticle() =>
+      articleDataSource.getListArticle();
 }

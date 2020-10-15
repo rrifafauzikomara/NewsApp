@@ -5,11 +5,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'article_entity.g.dart';
 
 @JsonSerializable()
-class ArticleResult implements Equatable {
+class ArticleResultEntity implements Equatable {
   @JsonKey(name: 'articles')
-  final List<Article> articles;
+  final List<ArticleEntity> articles;
 
-  ArticleResult({@required this.articles});
+  ArticleResultEntity({@required this.articles});
 
   @override
   List<Object> get props => [articles];
@@ -17,14 +17,14 @@ class ArticleResult implements Equatable {
   @override
   bool get stringify => null;
 
-  factory ArticleResult.fromJson(Map<String, dynamic> json) =>
-      _$ArticleResultFromJson(json);
+  factory ArticleResultEntity.fromJson(Map<String, dynamic> json) =>
+      _$ArticleResultEntityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ArticleResultToJson(this);
+  Map<String, dynamic> toJson() => _$ArticleResultEntityToJson(this);
 }
 
 @JsonSerializable()
-class Article implements Equatable {
+class ArticleEntity implements Equatable {
   @JsonKey(name: 'author')
   final String author;
 
@@ -46,7 +46,7 @@ class Article implements Equatable {
   @JsonKey(name: 'content')
   final String content;
 
-  Article(
+  ArticleEntity(
       {this.author,
       this.title,
       this.description,
@@ -62,8 +62,8 @@ class Article implements Equatable {
   @override
   bool get stringify => null;
 
-  factory Article.fromJson(Map<String, dynamic> json) =>
-      _$ArticleFromJson(json);
+  factory ArticleEntity.fromJson(Map<String, dynamic> json) =>
+      _$ArticleEntityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ArticleToJson(this);
+  Map<String, dynamic> toJson() => _$ArticleEntityToJson(this);
 }

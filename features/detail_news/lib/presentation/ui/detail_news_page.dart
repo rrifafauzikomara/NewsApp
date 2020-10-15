@@ -9,7 +9,7 @@ import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
 class DetailNewsPage extends StatelessWidget {
-  final Article article;
+  final ArticleEntity article;
 
   const DetailNewsPage({@required this.article});
 

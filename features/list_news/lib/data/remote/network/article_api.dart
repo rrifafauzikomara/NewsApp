@@ -9,15 +9,14 @@ class ArticleApi extends ArticleDataSource {
   ArticleApi({@required this.dio});
 
   @override
-  Future<ArticleResult> getListArticle() async {
+  Future<ArticleResultEntity> getListArticle() async {
     try {
       Response response = await dio.get("/top-headlines", queryParameters: {
         "country": "id",
         "category": "business",
         "apiKey": "81d98da5c83d45a5ad24b6ab1698e745"
       });
-      ArticleResult articleResult = ArticleResult.fromJson(response.data);
-      return articleResult;
+      return ArticleResultEntity.fromJson(response.data);
     } on DioError catch (e) {
       return e.error;
     }

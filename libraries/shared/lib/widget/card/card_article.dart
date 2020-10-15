@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
 
 class CardArticle extends StatelessWidget {
-  final Article article;
+  final ArticleEntity article;
   final Function onPressed;
 
   const CardArticle({Key key, @required this.article, @required this.onPressed})

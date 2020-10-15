@@ -26,7 +26,7 @@ class NoData extends ResultState {
 }
 
 class HasData extends ResultState {
-  final ArticleResult data;
+  final ArticleResultEntity data;
 
   HasData({@required this.data});
 
