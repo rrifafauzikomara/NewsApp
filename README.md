@@ -35,6 +35,20 @@ You can do self-study about it in [here](https://medium.com/flutter-community/ma
 
 
 ## Modularization Structure 🔥
+
+    # Root Project
+    .
+    ├── features               # Name of directory
+    |   └── feature A, etc.    # Handling feature module with clean arch.
+    |
+    ├── lib                    # Name of module (default from Flutter)
+    |
+    └── libraries              # Name of directory
+        ├── core               # core module.
+        └── shared             # shared module.
+
+
+## Clean Architecture Flow 🔥
 <pre>
 <img src="screenshot/architecture.png">
 </pre>
