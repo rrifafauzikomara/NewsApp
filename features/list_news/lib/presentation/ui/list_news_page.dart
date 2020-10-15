@@ -52,7 +52,6 @@ class ListNewsPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        heroTag: "list_new_page",
         transitionBetweenRoutes: false,
         middle: Text(Modular.get<LocaleKeys>().listNewsTitle.tr()),
       ),

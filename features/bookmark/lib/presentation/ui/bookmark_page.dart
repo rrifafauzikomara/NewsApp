@@ -18,7 +18,6 @@ class BookmarkPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        heroTag: "boormark_page",
         transitionBetweenRoutes: false,
         middle: Text(Modular.get<LocaleKeys>().bookmarkTitle.tr()),
       ),
