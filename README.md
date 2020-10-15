@@ -62,6 +62,7 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 * Handle State - (Loading, No Data, Has Data, No Internet Connection, Request Timeout, Error)
 * [Flutter Screenutil](https://pub.dev/packages/flutter_screenutil) - Responsive UI
 
+
 ## Todo
 * [ ] Animation
 * [ ] Dependency module for handling version of dependencies
