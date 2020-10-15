@@ -65,6 +65,7 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 
 
 ## Todo
+* [ ] Add Settings Screen
 * [ ] Dynamic Theme (Light and Dark by App)
 * [ ] Localization by App (ID, EN)
 * [ ] Favorite News using Moor
