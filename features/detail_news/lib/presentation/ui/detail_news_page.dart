@@ -22,12 +22,15 @@ class DetailNewsPage extends StatelessWidget {
                   height: 200.h,
                   child: Center(child: Icon(Icons.error)),
                 )
-              : CachedNetworkImage(
-                  imageUrl: article.urlToImage,
-                  placeholder: (context, url) =>
-                      Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) =>
-                      Center(child: Icon(Icons.error)),
+              : Hero(
+                  tag: article.urlToImage,
+                  child: CachedNetworkImage(
+                    imageUrl: article.urlToImage,
+                    placeholder: (context, url) =>
+                        Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) =>
+                        Center(child: Icon(Icons.error)),
+                  ),
                 ),
           Padding(
             padding: EdgeInsets.all(10),

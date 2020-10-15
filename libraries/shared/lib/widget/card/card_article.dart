@@ -21,13 +21,16 @@ class CardArticle extends StatelessWidget {
                 width: 200.w,
                 child: Center(child: Icon(Icons.error)),
               )
-            : CachedNetworkImage(
-                imageUrl: article.urlToImage,
-                width: 200.w,
-                placeholder: (context, url) =>
-                    Center(child: CircularProgressIndicator()),
-                errorWidget: (context, url, error) =>
-                    Center(child: Icon(Icons.error)),
+            : Hero(
+                tag: article.urlToImage,
+                child: CachedNetworkImage(
+                  imageUrl: article.urlToImage,
+                  width: 200.w,
+                  placeholder: (context, url) =>
+                      Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) =>
+                      Center(child: Icon(Icons.error)),
+                ),
               ),
         title: Text(
           article.title ?? "",
