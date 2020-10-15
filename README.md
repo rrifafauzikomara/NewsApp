@@ -29,23 +29,22 @@
 ## Quick start
 This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
 This project uses **BLoC** (business logic component) to separate the business logic with UI itself.
-It's recommended to do self-study about it before jumping into the project [here](https://bloclibrary.dev/).
 And also on this project uses **Modularization** approach to separate each modules.
-You can do self-study about it in [here](https://medium.com/flutter-community/mastering-flutter-modularization-in-several-ways-f5bced19101a) and [here](https://pub.dev/packages/flutter_modular).
+It's recommended to do self-study about it in here (BLoC: [here](https://bloclibrary.dev/), Modularization: [here](https://medium.com/flutter-community/mastering-flutter-modularization-in-several-ways-f5bced19101a) and [here](https://pub.dev/packages/flutter_modular)).
 
 
 ## Modularization Structure 🔥
 
     # Root Project
     .
-    ├── features               # Name of directory
-    |   └── feature A, etc.    # Handling feature module with clean arch.
+    ├── features                 # Name of directory
+    |   └── feature A, B, etc.   # Handling feature module with clean arch.
     |
-    ├── lib                    # Name of module (default from Flutter)
+    ├── lib                      # Name of module (default from Flutter)
     |
-    └── libraries              # Name of directory
-        ├── core               # core module.
-        └── shared             # shared module.
+    └── libraries                # Name of directory
+        ├── core                 # core module.
+        └── shared               # shared module.
 
 
 ## Clean Architecture Flow 🔥
