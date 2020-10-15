@@ -26,6 +26,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
+        transitionBetweenRoutes: false,
         middle: Text(Modular.get<LocaleKeys>().settingTitle.tr()),
       ),
       child: _buildBody(context),

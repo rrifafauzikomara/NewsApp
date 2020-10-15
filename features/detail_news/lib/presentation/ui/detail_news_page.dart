@@ -78,6 +78,7 @@ class DetailNewsPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
+        transitionBetweenRoutes: false,
         middle: Text(Modular.get<LocaleKeys>().detailNewsTitle.tr()),
       ),
       child: SafeArea(child: _buildBody(context)),
