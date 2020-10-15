@@ -64,6 +64,7 @@ You can do self-study about it in [here](https://medium.com/flutter-community/ma
 * [Flutter Screenutil](https://pub.dev/packages/flutter_screenutil) - Responsive UI
 
 ## Todo
+* [ ] Animation
 * [ ] Dynamic Theme (Light and Dark by App)
 * [ ] Localization by App (ID, EN)
 * [ ] Favorite News using Moor
