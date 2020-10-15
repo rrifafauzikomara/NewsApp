@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
@@ -17,13 +17,18 @@ class DetailNewsPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          CachedNetworkImage(
-            imageUrl: article.urlToImage,
-            placeholder: (context, url) =>
-                Center(child: CircularProgressIndicator()),
-            errorWidget: (context, url, error) =>
-                Container(child: Icon(Icons.error)),
-          ),
+          article.urlToImage == null
+              ? Container(
+                  height: 200.h,
+                  child: Center(child: Icon(Icons.error)),
+                )
+              : CachedNetworkImage(
+                  imageUrl: article.urlToImage,
+                  placeholder: (context, url) =>
+                      Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) =>
+                      Center(child: Icon(Icons.error)),
+                ),
           Padding(
             padding: EdgeInsets.all(10),
             child: Column(
