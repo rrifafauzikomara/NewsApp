@@ -44,9 +44,9 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
     ├── lib                    # Name of module (default from Flutter)
     |
     └── libraries              # Name of directory
-        ├── core               # core module.
-        ├── dependencies       # dependencies module.
-        └── shared             # shared module.
+        ├── core               # Core module.
+        ├── dependencies       # Handle dependency version updates.
+        └── shared             # Handle common utility class and custom widget.
 
 
 ## Clean Architecture Flow 🔥
