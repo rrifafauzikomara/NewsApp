@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:list_news/domain/entities/article_entity.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
-import 'package:dependencies/dependencies.dart';
-import 'package:list_news/domain/entities/article_entity.dart';
 
 class DetailNewsPage extends StatelessWidget {
   final ArticleEntity article;
@@ -61,7 +61,9 @@ class DetailNewsPage extends StatelessWidget {
                 SizedBox(height: 10.h),
                 RaisedButton(
                   child: Text(Modular.get<LocaleKeys>().btnReadMore.tr()),
-                  onPressed: () {},
+                  onPressed: () => Modular.link.pushNamed(
+                      Modular.get<NamedRoutes>().detailWebViewPage,
+                      arguments: article.url),
                 ),
               ],
             ),

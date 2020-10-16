@@ -9,6 +9,7 @@ class NamedRoutes {
 
   // detail article feature
   String detailArticlePage = "/detail_article";
+  String detailWebViewPage = "/article_web";
 
   // bookmark
   String bookmarkPage = "/bookmark";
