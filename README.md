@@ -36,15 +36,17 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 
     # Root Project
     .
-    ├── features                 # Name of directory
-    |   └── feature A, B, etc.   # Handling feature module with clean arch.
+    ├── features               # Name of directory
+    |   ├── feature A          # Feature module with a clean architecture inside it.
+    |   ├── feature B
+    |   └── feature etc
     |
-    ├── lib                      # Name of module (default from Flutter)
+    ├── lib                    # Name of module (default from Flutter)
     |
-    └── libraries                # Name of directory
-        ├── core                 # core module.
-        ├── dependencies         # dependencies module.
-        └── shared               # shared module.
+    └── libraries              # Name of directory
+        ├── core               # core module.
+        ├── dependencies       # dependencies module.
+        └── shared             # shared module.
 
 
 ## Clean Architecture Flow 🔥
@@ -59,7 +61,7 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 * [Json Serializable](https://pub.dev/packages/json_serializable) - Builders for handling JSON.
 * [Dio](https://github.com/flutterchina/dio/) - A type-safe HTTP client.
 * [BLoC Pattern](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
-* Handle State - (Loading, No Data, Has Data, No Internet Connection, Request Timeout, Error)
+* State - (Loading, No Data, Has Data, No Internet Connection, Request Timeout, Error)
 * [Flutter Screenutil](https://pub.dev/packages/flutter_screenutil) - Responsive UI
 
 
