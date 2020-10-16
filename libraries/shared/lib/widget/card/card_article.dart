@@ -1,13 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:dependencies/dependencies.dart';
+import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
+import 'package:shared/common/common.dart';
 
 class CardArticle extends StatelessWidget {
   final ArticleEntity article;
-  final Function onPressed;
 
-  const CardArticle({Key key, @required this.article, @required this.onPressed})
-      : super(key: key);
+  const CardArticle({Key key, @required this.article}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,9 @@ class CardArticle extends StatelessWidget {
           article.title ?? "",
         ),
         subtitle: Text(article.author ?? ""),
-        onTap: onPressed,
+        onTap: () => Modular.to.pushNamed(
+            Modular.get<NamedRoutes>().detailArticlePage,
+            arguments: article),
       ),
     );
   }

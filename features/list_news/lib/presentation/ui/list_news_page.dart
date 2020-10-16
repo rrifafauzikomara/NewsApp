@@ -1,6 +1,6 @@
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:dependencies/dependencies.dart';
 import 'package:list_news/presentation/bloc/bloc.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
@@ -10,18 +10,23 @@ class ListNewsPage extends StatelessWidget {
     return BlocBuilder<ArticleBloc, ResultState>(
       builder: (context, state) {
         if (state is HasData) {
-          return ListView.builder(
-            shrinkWrap: true,
-            itemCount: state.data.articles.length,
-            itemBuilder: (context, index) {
-              var article = state.data.articles[index];
-              return CardArticle(
-                article: article,
-                onPressed: () => Modular.to.pushNamed(
-                    Modular.get<NamedRoutes>().detailArticlePage,
-                    arguments: article),
-              );
+          var articleNew = state.data.articles[0];
+          var articleList = state.data.articles;
+          articleList.removeAt(0);
+          return NestedScrollView(
+            headerSliverBuilder: (context, isScrolled) {
+              return [
+                CustomSliver(article: articleNew),
+              ];
             },
+            body: ListView.separated(
+              separatorBuilder: (context, index) => Divider(),
+              shrinkWrap: true,
+              itemCount: articleList.length,
+              itemBuilder: (context, index) {
+                return CardArticle(article: articleList[index]);
+              },
+            ),
           );
         } else if (state is Loading) {
           return Center(child: CircularProgressIndicator());

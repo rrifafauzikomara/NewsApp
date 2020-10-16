@@ -1,6 +1,6 @@
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:dependencies/dependencies.dart';
 import 'package:shared/common/styles/color_palettes.dart';
 
 // Styling for text
