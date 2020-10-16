@@ -49,7 +49,7 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
         └── shared             # Handle common utility class and custom widget.
 
 
-## Clean Architecture Flow 🔥
+## Clean Architecture Flow (Feature Module) 🔥
 <pre>
 <img src="screenshot/architecture.png">
 </pre>
