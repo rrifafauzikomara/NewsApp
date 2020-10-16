@@ -10,7 +10,7 @@ class NewsHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
+    var width = context.width;
     return SliverAppBar(
       expandedHeight: 400.h,
       flexibleSpace: FlexibleSpaceBar(
