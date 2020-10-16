@@ -10,18 +10,19 @@ class NewsHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height / 3;
+    var width = MediaQuery.of(context).size.width;
     return SliverAppBar(
-      expandedHeight: 400.h,
+      expandedHeight: height,
       flexibleSpace: FlexibleSpaceBar(
         background: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
             article.urlToImage == null
                 ? Container(
                     child: Center(
                       child: Icon(Icons.error),
                     ),
-                    height: 300.h,
+                    height: height * 0.75,
                   )
                 : Stack(
                     children: [
@@ -30,19 +31,19 @@ class NewsHeader extends StatelessWidget {
                             Modular.get<NamedRoutes>().detailArticlePage,
                             arguments: article),
                         child: CachedNetworkImage(
-                          height: 300.h,
-                          width: double.infinity,
+                          height: height * 0.75,
+                          width: width,
                           imageUrl: article.urlToImage,
                           fit: BoxFit.contain,
                           placeholder: (context, url) => Container(
                             child: Center(child: CircularProgressIndicator()),
-                            height: 300.h,
+                            height: height * 0.75,
                           ),
                           errorWidget: (context, url, error) => Container(
                             child: Center(
                               child: Icon(Icons.error),
                             ),
-                            height: 300.h,
+                            height: height * 0.75,
                           ),
                         ),
                       ),
@@ -68,11 +69,11 @@ class NewsHeader extends StatelessWidget {
                       ),
                     ],
                   ),
-            Spacer(),
-            Divider(),
+            Divider(height: height * 0.05),
             Container(
               color: ThemeData().cardColor,
               padding: EdgeInsets.all(5),
+              height: height * 0.2,
               child: Text(article.title),
             ),
           ],
