@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,10 +45,19 @@ class ListNewsPage extends StatelessWidget {
     );
   }
 
+  Widget _settingIcons() {
+    return IconButton(
+      icon: Icon(Platform.isIOS ? CupertinoIcons.settings : Icons.settings),
+      onPressed: () =>
+          Modular.to.pushNamed(Modular.get<NamedRoutes>().settingsPage),
+    );
+  }
+
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(Modular.get<LocaleKeys>().listNewsTitle.tr()),
+        actions: [_settingIcons()],
       ),
       body: _buildList(),
     );
@@ -55,9 +66,9 @@ class ListNewsPage extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        transitionBetweenRoutes: false,
-        middle: Text(Modular.get<LocaleKeys>().listNewsTitle.tr()),
-      ),
+          transitionBetweenRoutes: false,
+          middle: Text(Modular.get<LocaleKeys>().listNewsTitle.tr()),
+          trailing: _settingIcons()),
       child: SafeArea(child: _buildList()),
     );
   }
