@@ -51,19 +51,20 @@ class NewsHeader extends StatelessWidget {
                       ),
                       Align(
                         alignment: Alignment.topRight,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: ThemeData().cardColor,
+                        child: Card(
+                          margin: EdgeInsets.all(0),
+                          shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(10),
                             ),
                           ),
-                          width: 150.w,
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            Modular.get<LocaleKeys>().listNewsRelease.tr(),
-                            style: Theme.of(context).textTheme.headline6,
-                            textAlign: TextAlign.center,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              Modular.get<LocaleKeys>().listNewsRelease.tr(),
+                              style: Theme.of(context).textTheme.headline6,
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                       ),
@@ -71,7 +72,6 @@ class NewsHeader extends StatelessWidget {
                   ),
             Divider(height: 2.h),
             Container(
-              color: ThemeData().cardColor,
               padding: EdgeInsets.all(5),
               height: 100.h,
               width: width,
