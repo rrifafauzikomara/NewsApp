@@ -16,7 +16,7 @@ class ListNewsPage extends StatelessWidget {
           return NestedScrollView(
             headerSliverBuilder: (context, isScrolled) {
               return [
-                CustomSliver(article: articleNew),
+                NewsHeader(article: articleNew),
               ];
             },
             body: ListView.separated(

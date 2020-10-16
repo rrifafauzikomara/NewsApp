@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
 import 'package:shared/common/common.dart';
 
-class CustomSliver extends StatelessWidget {
+class NewsHeader extends StatelessWidget {
   final ArticleEntity article;
 
-  const CustomSliver({Key key, @required this.article}) : super(key: key);
+  const NewsHeader({Key key, @required this.article}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
