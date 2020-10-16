@@ -10,10 +10,9 @@ class NewsHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height / 3;
     var width = MediaQuery.of(context).size.width;
     return SliverAppBar(
-      expandedHeight: height,
+      expandedHeight: 400.h,
       flexibleSpace: FlexibleSpaceBar(
         background: Column(
           children: [
@@ -22,7 +21,8 @@ class NewsHeader extends StatelessWidget {
                     child: Center(
                       child: Icon(Icons.error),
                     ),
-                    height: height * 0.75,
+                    width: width,
+                    height: 298.h,
                   )
                 : Stack(
                     children: [
@@ -31,19 +31,21 @@ class NewsHeader extends StatelessWidget {
                             Modular.get<NamedRoutes>().detailArticlePage,
                             arguments: article),
                         child: CachedNetworkImage(
-                          height: height * 0.75,
+                          height: 298.h,
                           width: width,
                           imageUrl: article.urlToImage,
                           fit: BoxFit.contain,
                           placeholder: (context, url) => Container(
                             child: Center(child: CircularProgressIndicator()),
-                            height: height * 0.75,
+                            height: 298.h,
+                            width: width,
                           ),
                           errorWidget: (context, url, error) => Container(
                             child: Center(
                               child: Icon(Icons.error),
                             ),
-                            height: height * 0.75,
+                            width: width,
+                            height: 298.h,
                           ),
                         ),
                       ),
@@ -60,21 +62,26 @@ class NewsHeader extends StatelessWidget {
                           padding: EdgeInsets.all(10),
                           child: Text(
                             Modular.get<LocaleKeys>().listNewsRelease.tr(),
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
                             style: Theme.of(context).textTheme.headline6,
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
                     ],
                   ),
-            Divider(height: height * 0.05),
+            Divider(height: 2.h),
             Container(
               color: ThemeData().cardColor,
               padding: EdgeInsets.all(5),
-              height: height * 0.2,
-              child: Text(article.title),
+              height: 100.h,
+              width: width,
+              child: Center(
+                child: Text(
+                  article.title,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
+              ),
             ),
           ],
         ),
