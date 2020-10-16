@@ -5,6 +5,7 @@ class LocaleKeys {
 
   // list news
   String listNewsTitle = "listNews.title";
+  String listNewsRelease = "listNews.new";
 
   // detail news
   String detailNewsTitle = "detailNews.title";

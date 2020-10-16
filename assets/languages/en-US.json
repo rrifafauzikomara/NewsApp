@@ -4,7 +4,8 @@
     "navBar2": "Bookmark"
   },
   "listNews": {
-    "title": "News"
+    "title": "News",
+    "new": "New"
   },
   "detailNews": {
     "title": "News",

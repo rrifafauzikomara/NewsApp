@@ -58,7 +58,7 @@ class NewsHeader extends StatelessWidget {
                           width: 150.w,
                           padding: EdgeInsets.all(10),
                           child: Text(
-                            "New",
+                            Modular.get<LocaleKeys>().listNewsRelease.tr(),
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
                             maxLines: 2,
