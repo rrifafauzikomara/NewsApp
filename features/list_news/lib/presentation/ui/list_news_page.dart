@@ -22,7 +22,7 @@ class ListNewsPage extends StatelessWidget {
               ];
             },
             body: ListView.separated(
-              separatorBuilder: (context, index) => Divider(),
+              separatorBuilder: (context, index) => Divider(height: 2.h),
               shrinkWrap: true,
               itemCount: articleList.length,
               itemBuilder: (context, index) {

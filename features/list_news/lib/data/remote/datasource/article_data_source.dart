@@ -1,5 +1,5 @@
-import 'package:list_news/domain/entities/article_entity.dart';
+import 'package:list_news/data/model/article_result_model.dart';
 
 abstract class ArticleDataSource {
-  Future<ArticleResultEntity> getListArticle();
+  Future<ArticleResultModel> getListArticle();
 }

@@ -1,10 +1,10 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:list_news/domain/entities/article_entity.dart';
+import 'package:list_news/data/model/article_model.dart';
 import 'package:shared/common/common.dart';
 
 class CardArticle extends StatelessWidget {
-  final ArticleEntity article;
+  final ArticleModel article;
 
   const CardArticle({Key key, @required this.article}) : super(key: key);
 

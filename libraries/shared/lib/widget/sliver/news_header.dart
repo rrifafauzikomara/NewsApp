@@ -1,10 +1,10 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:list_news/domain/entities/article_entity.dart';
+import 'package:list_news/data/model/article_model.dart';
 import 'package:shared/common/common.dart';
 
 class NewsHeader extends StatelessWidget {
-  final ArticleEntity article;
+  final ArticleModel article;
 
   const NewsHeader({Key key, @required this.article}) : super(key: key);
 
@@ -70,7 +70,6 @@ class NewsHeader extends StatelessWidget {
                       ),
                     ],
                   ),
-            Divider(height: 2.h),
             Container(
               padding: EdgeInsets.all(5),
               height: 100.h,
@@ -83,6 +82,7 @@ class NewsHeader extends StatelessWidget {
                 ),
               ),
             ),
+            Divider(height: 2.h),
           ],
         ),
       ),
