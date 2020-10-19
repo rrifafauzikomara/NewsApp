@@ -1,11 +1,11 @@
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:dependencies/dependencies.dart';
 
 part 'article_entity.g.dart';
 
 @JsonSerializable()
-class ArticleResultEntity implements Equatable {
+class ArticleResultEntity extends Equatable {
   @JsonKey(name: 'articles')
   final List<ArticleEntity> articles;
 
@@ -14,9 +14,6 @@ class ArticleResultEntity implements Equatable {
   @override
   List<Object> get props => [articles];
 
-  @override
-  bool get stringify => null;
-
   factory ArticleResultEntity.fromJson(Map<String, dynamic> json) =>
       _$ArticleResultEntityFromJson(json);
 
@@ -24,7 +21,7 @@ class ArticleResultEntity implements Equatable {
 }
 
 @JsonSerializable()
-class ArticleEntity implements Equatable {
+class ArticleEntity extends Equatable {
   @JsonKey(name: 'author')
   final String author;
 
@@ -58,9 +55,6 @@ class ArticleEntity implements Equatable {
   @override
   List<Object> get props =>
       [author, title, description, url, urlToImage, publishedAt, content];
-
-  @override
-  bool get stringify => null;
 
   factory ArticleEntity.fromJson(Map<String, dynamic> json) =>
       _$ArticleEntityFromJson(json);
