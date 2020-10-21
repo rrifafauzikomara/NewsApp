@@ -12,8 +12,8 @@ class ListNewsPage extends StatelessWidget {
     return BlocBuilder<ArticleBloc, ResultState>(
       builder: (context, state) {
         if (state is HasData) {
-          var articleNew = state.data.articles[0];
-          var articleList = state.data.articles;
+          var articleNew = state.data[0];
+          var articleList = state.data;
           articleList.removeAt(0);
           return NestedScrollView(
             headerSliverBuilder: (context, isScrolled) {

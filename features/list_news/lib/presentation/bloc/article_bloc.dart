@@ -1,7 +1,8 @@
-import 'dart:io';
 import 'dart:async';
-import 'package:flutter/material.dart';
+import 'dart:io';
+
 import 'package:dependencies/dependencies.dart';
+import 'package:flutter/material.dart';
 import 'package:list_news/domain/usecase/article_usecase.dart';
 import 'package:list_news/presentation/bloc/article_event.dart';
 import 'package:list_news/presentation/bloc/article_state.dart';
@@ -22,7 +23,7 @@ class ArticleBloc extends Bloc<ResultEvent, ResultState> {
     try {
       yield Loading();
       var article = await articleUseCase.getListArticle();
-      if (article.articles.isEmpty) {
+      if (article.isEmpty) {
         yield NoData(message: 'No Data');
       } else {
         yield HasData(data: article);

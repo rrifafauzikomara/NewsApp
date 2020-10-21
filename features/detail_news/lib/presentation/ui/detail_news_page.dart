@@ -1,12 +1,12 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:list_news/data/model/article_model.dart';
+import 'package:list_news/domain/entities/article_entity.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
 class DetailNewsPage extends StatelessWidget {
-  final ArticleModel article;
+  final ArticleEntity article;
 
   const DetailNewsPage({@required this.article});
 
