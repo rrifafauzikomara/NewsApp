@@ -1,6 +1,7 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:settings/presentation/bloc/bloc.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
@@ -43,6 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
               onChanged: (value) {
                 setState(() {
                   _isDarkTheme = value;
+                  context.bloc<SettingsBloc>().add(ChangeTheme(_isDarkTheme));
                 });
               },
             ),
