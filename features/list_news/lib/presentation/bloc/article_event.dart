@@ -1,10 +1,10 @@
 import 'package:dependencies/dependencies.dart';
 
-abstract class ResultEvent extends Equatable {
-  const ResultEvent();
+abstract class ArticleEvent extends Equatable {
+  const ArticleEvent();
 
   @override
   List<Object> get props => [];
 }
 
-class LoadData extends ResultEvent {}
+class LoadData extends ArticleEvent {}

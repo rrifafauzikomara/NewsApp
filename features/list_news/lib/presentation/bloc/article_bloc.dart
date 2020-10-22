@@ -7,19 +7,19 @@ import 'package:list_news/domain/usecase/article_usecase.dart';
 import 'package:list_news/presentation/bloc/article_event.dart';
 import 'package:list_news/presentation/bloc/article_state.dart';
 
-class ArticleBloc extends Bloc<ResultEvent, ResultState> {
+class ArticleBloc extends Bloc<ArticleEvent, ArticleState> {
   final ArticleUseCase articleUseCase;
 
   ArticleBloc({@required this.articleUseCase}) : super(Initial());
 
   @override
-  Stream<ResultState> mapEventToState(ResultEvent event) async* {
+  Stream<ArticleState> mapEventToState(ArticleEvent event) async* {
     if (event is LoadData) {
       yield* _loadArticle();
     }
   }
 
-  Stream<ResultState> _loadArticle() async* {
+  Stream<ArticleState> _loadArticle() async* {
     try {
       yield Loading();
       var article = await articleUseCase.getListArticle();

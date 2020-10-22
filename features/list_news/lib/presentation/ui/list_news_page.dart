@@ -9,7 +9,7 @@ import 'package:shared/widget/widget.dart';
 
 class ListNewsPage extends StatelessWidget {
   Widget _buildList() {
-    return BlocBuilder<ArticleBloc, ResultState>(
+    return BlocBuilder<ArticleBloc, ArticleState>(
       builder: (context, state) {
         if (state is HasData) {
           var articleNew = state.data[0];
