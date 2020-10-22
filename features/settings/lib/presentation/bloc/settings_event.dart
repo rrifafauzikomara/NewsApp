@@ -1,7 +1,7 @@
 import 'package:dependencies/dependencies.dart';
 
 abstract class SettingsEvent extends Equatable {
-  const SettingsEvent([this.isDarkTheme, this.isEnglish]);
+  const SettingsEvent([this.isDarkTheme = false, this.isEnglish = true]);
 
   final bool isDarkTheme;
   final bool isEnglish;
