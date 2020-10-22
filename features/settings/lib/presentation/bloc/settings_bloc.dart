@@ -8,8 +8,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   Stream<SettingsState> mapEventToState(SettingsEvent event) async* {
     if (event is ChangeTheme) {
       yield* _changeTheme(event.isDarkTheme);
-    } else if (event is CheckLanguage) {
-      yield* _checkLanguage(event.locale);
     } else if (event is ChangeLanguage) {
       yield* _changeLanguage(event.isEnglish);
     }
@@ -17,17 +15,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
 
   Stream<SettingsState> _changeTheme(bool isDarkTheme) async* {
     yield ThemeState(isDarkTheme: isDarkTheme);
-  }
-
-  Stream<SettingsState> _checkLanguage(String local) async* {
-    switch (local) {
-      case "en_US":
-        yield EnglishLanguageState();
-        break;
-      case "id_ID":
-        yield IndonesiaLanguageState();
-        break;
-    }
   }
 
   Stream<SettingsState> _changeLanguage(bool isEnglish) async* {

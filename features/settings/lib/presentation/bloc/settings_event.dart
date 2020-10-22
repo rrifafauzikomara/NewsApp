@@ -25,12 +25,3 @@ class ChangeLanguage extends SettingsEvent {
   @override
   List<Object> get props => [isEnglish];
 }
-
-class CheckLanguage extends SettingsEvent {
-  final String locale;
-
-  CheckLanguage({@required this.locale});
-
-  @override
-  List<Object> get props => [locale];
-}
