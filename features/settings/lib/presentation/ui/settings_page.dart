@@ -34,43 +34,57 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Widget _buildBody(BuildContext context) {
-    return ListView(
-      children: [
-        Material(
-          child: ListTile(
-            title: Text(Modular.get<LocaleKeys>().settingTheme.tr()),
-            trailing: Switch.adaptive(
-              value: _isDarkTheme,
-              onChanged: (value) {
-                setState(() {
-                  _isDarkTheme = value;
-                  context.bloc<SettingsBloc>().add(ChangeTheme(_isDarkTheme));
-                });
-              },
+    var local = context.locale.toString();
+    return BlocProvider(
+      create: (context) =>
+          context.bloc<SettingsBloc>()..add(CheckLanguage(locale: local)),
+      child: ListView(
+        children: [
+          Material(
+            child: ListTile(
+              title: Text(Modular.get<LocaleKeys>().settingTheme.tr()),
+              trailing: Switch.adaptive(
+                value: _isDarkTheme,
+                onChanged: (value) {
+                  setState(() {
+                    _isDarkTheme = value;
+                    context
+                        .bloc<SettingsBloc>()
+                        .add(ChangeTheme(isDarkTheme: _isDarkTheme));
+                  });
+                },
+              ),
             ),
           ),
-        ),
-        Material(
-          child: ListTile(
-            title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
-            trailing: Switch.adaptive(
-              value: _isIndonesia,
-              onChanged: (value) {
-                setState(() {
-                  _isIndonesia = value;
-                  if (_isIndonesia) {
-                    context.locale =
-                        EasyLocalization.of(context).supportedLocales[1];
-                  } else {
-                    context.locale =
-                        EasyLocalization.of(context).supportedLocales[0];
-                  }
-                });
-              },
+          BlocListener<SettingsBloc, SettingsState>(
+            listener: (context, state) {
+              if (state is EnglishLanguageState) {
+                context.locale =
+                    EasyLocalization.of(context).supportedLocales[0];
+              } else if (state is IndonesiaLanguageState) {
+                context.locale =
+                    EasyLocalization.of(context).supportedLocales[1];
+              }
+            },
+            child: Material(
+              child: ListTile(
+                title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
+                trailing: Switch.adaptive(
+                  value: _isIndonesia,
+                  onChanged: (value) {
+                    setState(() {
+                      _isIndonesia = value;
+                      context
+                          .bloc<SettingsBloc>()
+                          .add(ChangeLanguage(isEnglish: _isIndonesia));
+                    });
+                  },
+                ),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

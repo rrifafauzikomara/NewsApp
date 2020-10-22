@@ -11,11 +11,14 @@ abstract class SettingsState extends Equatable {
 class Initial extends SettingsState {}
 
 class ThemeState extends SettingsState {
-  final ThemeData theme;
   final bool isDarkTheme;
 
-  ThemeState({@required this.theme, @required this.isDarkTheme});
+  ThemeState({@required this.isDarkTheme});
 
   @override
-  List<Object> get props => [theme, isDarkTheme];
+  List<Object> get props => [isDarkTheme];
 }
+
+class EnglishLanguageState extends SettingsState {}
+
+class IndonesiaLanguageState extends SettingsState {}
