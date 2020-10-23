@@ -8,15 +8,6 @@ abstract class SettingsEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class ChangeTheme extends SettingsEvent {
-  final bool isDarkTheme;
-
-  ChangeTheme({@required this.isDarkTheme});
-
-  @override
-  List<Object> get props => [isDarkTheme];
-}
-
 class ChangeLanguage extends SettingsEvent {
   final bool isEnglish;
 

@@ -8,7 +8,7 @@ import 'package:home/home.dart';
 import 'package:list_news/list_news.dart';
 import 'package:news_app/bloc/news_bloc_observer.dart';
 import 'package:news_app/ui/splash_page.dart';
-import 'package:settings/presentation/bloc/bloc.dart';
+import 'package:settings/presentation/bloc/theme/bloc.dart';
 import 'package:settings/settings.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/shared.dart';
@@ -63,31 +63,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SettingsBloc(),
-      child: BlocBuilder<SettingsBloc, SettingsState>(
+      create: (context) => ThemeBloc(),
+      child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: _buildWithTheme,
       ),
     );
   }
 
-  Widget _buildWithTheme(BuildContext context, SettingsState state) {
+  Widget _buildWithTheme(BuildContext context, ThemeState state) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Modular.get<LocaleKeys>().listNewsTitle.tr(),
-      theme: state is ThemeState
-          ? state.isDarkTheme
-              ? darkTheme
-              : lightTheme
-          : lightTheme,
+      theme: state.themeData,
       builder: (context, child) {
         return CupertinoTheme(
-          data: CupertinoThemeData(
-            brightness: state is ThemeState
-                ? state.isDarkTheme
-                    ? Brightness.dark
-                    : Brightness.light
-                : Brightness.light,
-          ),
+          data: CupertinoThemeData(brightness: state.brightness),
           child: Material(
             child: child,
           ),

@@ -1,7 +1,8 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:settings/presentation/bloc/bloc.dart';
+import 'package:settings/presentation/bloc/setting/bloc.dart';
+import 'package:settings/presentation/bloc/theme/bloc.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 
@@ -45,8 +46,8 @@ class _SettingsPageState extends State<SettingsPage> {
                 setState(() {
                   _isDarkTheme = value;
                   context
-                      .bloc<SettingsBloc>()
-                      .add(ChangeTheme(isDarkTheme: _isDarkTheme));
+                      .bloc<ThemeBloc>()
+                      .add(ThemeChanged(isDarkTheme: _isDarkTheme));
                 });
               },
             ),
@@ -83,9 +84,12 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformWidget(
-      androidBuilder: _buildAndroid,
-      iosBuilder: _buildIos,
+    return BlocProvider(
+      create: (context) => SettingsBloc(),
+      child: PlatformWidget(
+        androidBuilder: _buildAndroid,
+        iosBuilder: _buildIos,
+      ),
     );
   }
 }

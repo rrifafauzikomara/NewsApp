@@ -1,5 +1,4 @@
 import 'package:dependencies/dependencies.dart';
-import 'package:flutter/material.dart';
 
 abstract class SettingsState extends Equatable {
   const SettingsState();
@@ -9,15 +8,6 @@ abstract class SettingsState extends Equatable {
 }
 
 class Initial extends SettingsState {}
-
-class ThemeState extends SettingsState {
-  final bool isDarkTheme;
-
-  ThemeState({@required this.isDarkTheme});
-
-  @override
-  List<Object> get props => [isDarkTheme];
-}
 
 class EnglishLanguageState extends SettingsState {}
 
