@@ -9,3 +9,4 @@ export 'package:dio/dio.dart';
 export 'package:equatable/equatable.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:webview_flutter/webview_flutter.dart';
+export 'package:shared_preferences/shared_preferences.dart';

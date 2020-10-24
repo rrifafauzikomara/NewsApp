@@ -7,7 +7,9 @@ class CoreModule extends ChildModule {
   List<Bind> get binds => [
         Bind((_) => ApiConstant()),
         Bind((_) => Modular.get<DioClient>().dio),
-        Bind((_) => DioClient(apiBaseUrl: Modular.get<ApiConstant>().baseUrlDebug)),
+        Bind((_) =>
+            DioClient(apiBaseUrl: Modular.get<ApiConstant>().baseUrlDebug)),
+        Bind((_) => SharedPreferences.getInstance()),
       ];
 
   @override

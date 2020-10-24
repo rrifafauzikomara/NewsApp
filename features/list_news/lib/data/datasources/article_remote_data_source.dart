@@ -1,7 +1,10 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:list_news/data/model/article_result_model.dart';
-import 'package:list_news/data/remote/datasource/article_data_source.dart';
+import 'package:list_news/data/models/article_result_model.dart';
+
+abstract class ArticleDataSource {
+  Future<ArticleResultModel> getListArticle();
+}
 
 class ArticleApi extends ArticleDataSource {
   final Dio dio;

@@ -1,9 +1,8 @@
 import 'package:home/presentation/ui/home_page.dart';
-import 'package:list_news/data/remote/datasource/article_data_source.dart';
-import 'package:list_news/data/remote/network/article_api.dart';
+import 'package:list_news/data/datasources/article_remote_data_source.dart';
 import 'package:list_news/data/repositories/article_repository_impl.dart';
 import 'package:list_news/domain/repositories/article_repository.dart';
-import 'package:list_news/domain/usecase/article_usecase.dart';
+import 'package:list_news/domain/usecases/article_usecase.dart';
 import 'package:list_news/presentation/bloc/bloc.dart';
 import 'package:list_news/presentation/ui/list_news_page.dart';
 import 'package:bookmark/presentation/ui/bookmark_page.dart';
