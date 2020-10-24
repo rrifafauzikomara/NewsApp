@@ -56,9 +56,9 @@ class _SettingsPageState extends State<SettingsPage> {
         BlocListener<SettingsBloc, SettingsState>(
           listener: (context, state) {
             if (state is EnglishLanguageState) {
-              context.locale = EasyLocalization.of(context).supportedLocales[0];
+              context.locale = context.supportedLocales[0];
             } else if (state is IndonesiaLanguageState) {
-              context.locale = EasyLocalization.of(context).supportedLocales[1];
+              context.locale = context.supportedLocales[1];
             }
           },
           child: Material(
