@@ -9,9 +9,10 @@
 
 
 ## Features
-*  Headline
-*  Detail News
-*  Dynamic Behavior (Cupertino for iOS, Material for Android)
+* Headline
+* Detail News
+* Dynamic Behavior (Cupertino for iOS, Material for Android)
+* Dynamic Theme (Light and Dark by App)
 
 
 ## 📸 Example iOS
@@ -67,7 +68,6 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 
 
 ## Todo
-* [ ] Dynamic Theme (Light and Dark by App)
 * [ ] Localization by App (ID, EN)
 * [ ] Favorite News using Moor
 * [ ] CI/CD
