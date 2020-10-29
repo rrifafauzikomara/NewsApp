@@ -12,8 +12,6 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool _isIndonesia = false;
-
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -34,6 +32,7 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Widget _buildBody(BuildContext context) {
+    Modular.get<SettingsBloc>().add(GetLanguage());
     return ListView(
       children: [
         Material(
@@ -63,14 +62,17 @@ class _SettingsPageState extends State<SettingsPage> {
           child: Material(
             child: ListTile(
               title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
-              trailing: Switch.adaptive(
-                value: _isIndonesia,
-                onChanged: (value) {
-                  setState(() {
-                    _isIndonesia = value;
-                    Modular.get<SettingsBloc>()
-                        .add(ChangeLanguage(isEnglish: _isIndonesia));
-                  });
+              trailing: BlocBuilder<SettingsBloc, SettingsState>(
+                builder: (context, state) {
+                  return Switch.adaptive(
+                    value: state is LanguageState ? state.isActive : false,
+                    onChanged: (value) {
+                      setState(() {
+                        Modular.get<SettingsBloc>()
+                            .add(ChangeLanguage(isEnglish: value));
+                      });
+                    },
+                  );
                 },
               ),
             ),

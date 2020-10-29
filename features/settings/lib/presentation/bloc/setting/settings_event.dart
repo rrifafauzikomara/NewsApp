@@ -16,3 +16,5 @@ class ChangeLanguage extends SettingsEvent {
   @override
   List<Object> get props => [isEnglish];
 }
+
+class GetLanguage extends SettingsEvent {}
