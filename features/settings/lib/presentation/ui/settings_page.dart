@@ -12,7 +12,6 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool _isDarkTheme = false;
   bool _isIndonesia = false;
 
   Widget _buildAndroid(BuildContext context) {
@@ -40,15 +39,15 @@ class _SettingsPageState extends State<SettingsPage> {
         Material(
           child: ListTile(
             title: Text(Modular.get<LocaleKeys>().settingTheme.tr()),
-            trailing: Switch.adaptive(
-              value: _isDarkTheme,
-              onChanged: (value) {
-                setState(() {
-                  _isDarkTheme = value;
-                  context
-                      .bloc<ThemeBloc>()
-                      .add(ThemeChanged(isDarkTheme: _isDarkTheme));
-                });
+            trailing: BlocBuilder<ThemeBloc, ThemeState>(
+              builder: (context, state) {
+                return Switch.adaptive(
+                  value: state is ThemeState ? state.isDarkTheme : false,
+                  onChanged: (value) {
+                    Modular.get<ThemeBloc>()
+                        .add(ThemeChanged(isDarkTheme: value));
+                  },
+                );
               },
             ),
           ),
@@ -69,8 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 onChanged: (value) {
                   setState(() {
                     _isIndonesia = value;
-                    context
-                        .bloc<SettingsBloc>()
+                    Modular.get<SettingsBloc>()
                         .add(ChangeLanguage(isEnglish: _isIndonesia));
                   });
                 },
@@ -85,7 +83,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SettingsBloc(),
+      create: (context) => Modular.get<SettingsBloc>(),
       child: PlatformWidget(
         androidBuilder: _buildAndroid,
         iosBuilder: _buildIos,

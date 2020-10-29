@@ -1,4 +1,5 @@
 import 'package:bookmark/bookmark.dart';
+import 'package:core/local/shared_pref_helper.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:detail_news/detail_news.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,7 +14,9 @@ import 'package:shared/common/common.dart';
 
 class AppModule extends MainModule {
   @override
-  List<Bind> get binds => [];
+  List<Bind> get binds => [
+        Bind((_) => ThemeBloc(prefHelper: Modular.get<SharedPrefHelper>())),
+      ];
 
   @override
   Widget get bootstrap => EasyLocalization(
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ThemeBloc(),
+      create: (context) => Modular.get<ThemeBloc>(),
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: _buildWithTheme,
       ),
@@ -62,13 +65,16 @@ class MyApp extends StatelessWidget {
   }
 
   Widget _buildWithTheme(BuildContext context, ThemeState state) {
+    Modular.get<ThemeBloc>().add(GetTheme());
     return MaterialApp(
       debugShowCheckedModeBanner: Config.isDebug,
       title: Modular.get<LocaleKeys>().listNewsTitle.tr(),
-      theme: state.themeData,
+      theme: state.isDarkTheme ? darkTheme : lightTheme,
       builder: (context, child) {
         return CupertinoTheme(
-          data: CupertinoThemeData(brightness: state.brightness),
+          data: CupertinoThemeData(
+              brightness:
+                  state.isDarkTheme ? Brightness.dark : Brightness.light),
           child: Material(
             child: child,
           ),

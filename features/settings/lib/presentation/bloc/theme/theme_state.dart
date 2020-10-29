@@ -2,11 +2,10 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 class ThemeState extends Equatable {
-  final ThemeData themeData;
-  final Brightness brightness;
+  final bool isDarkTheme;
 
-  ThemeState({@required this.themeData, @required this.brightness});
+  ThemeState({@required this.isDarkTheme});
 
   @override
-  List<Object> get props => [themeData, brightness];
+  List<Object> get props => [isDarkTheme];
 }

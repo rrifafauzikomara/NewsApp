@@ -7,14 +7,10 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   @override
   Stream<SettingsState> mapEventToState(SettingsEvent event) async* {
     if (event is ChangeLanguage) {
-      yield* _changeLanguage(event.isEnglish);
+      if (event.isEnglish)
+        yield IndonesiaLanguageState();
+      else
+        yield EnglishLanguageState();
     }
-  }
-
-  Stream<SettingsState> _changeLanguage(bool isEnglish) async* {
-    if (isEnglish)
-      yield IndonesiaLanguageState();
-    else
-      yield EnglishLanguageState();
   }
 }

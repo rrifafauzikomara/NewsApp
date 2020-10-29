@@ -8,10 +8,13 @@ import 'package:news_app/ui/launcher/app_config.dart';
 import 'package:news_app/ui/launcher/news_app.dart';
 import 'package:shared/shared.dart';
 
-void main() {
+void main() async {
   Bloc.observer = NewsBlocObserver();
   Config.appFlavor = Flavor.RELEASE;
-  Modular.init(CoreModule(baseUrl: ApiConstant.baseUrlProd));
+  WidgetsFlutterBinding.ensureInitialized();
+  final preferences = await SharedPreferences.getInstance();
+  Modular.init(
+      CoreModule(baseUrl: ApiConstant.baseUrlProd, preferences: preferences));
   Modular.init(SharedModule());
   runApp(ModularApp(module: AppModule()));
 }
