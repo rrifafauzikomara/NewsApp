@@ -32,6 +32,7 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Widget _buildBody(BuildContext context) {
+    Modular.get<LanguageBloc>().add(GetLanguage());
     return ListView(
       children: [
         Material(
@@ -50,20 +51,31 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
         ),
-        Material(
-          child: ListTile(
-            title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
-            trailing: BlocBuilder<LanguageBloc, LanguageState>(
-              builder: (context, state) {
-                Modular.get<LanguageBloc>().add(GetLanguage());
-                return Switch.adaptive(
-                  value: state is InitialLanguage ? state.isIndonesian : false,
-                  onChanged: (value) {
-                    Modular.get<LanguageBloc>()
-                        .add(LanguageChanged(isIndonesian: value));
-                  },
-                );
-              },
+        BlocListener<LanguageBloc, LanguageState>(
+          listener: (context, state) {
+            if (state is EnglishLanguageState) {
+              context.locale = context.supportedLocales[1];
+            } else if (state is IndonesiaLanguageState) {
+              context.locale = context.supportedLocales[0];
+            }
+          },
+          child: Material(
+            child: ListTile(
+              title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
+              trailing: BlocBuilder<LanguageBloc, LanguageState>(
+                builder: (context, state) {
+                  return Switch.adaptive(
+                    value:
+                        state is InitialLanguage ? state.isIndonesian : false,
+                    onChanged: (value) {
+                      setState(() {
+                        Modular.get<LanguageBloc>()
+                            .add(LanguageChanged(isIndonesian: value));
+                      });
+                    },
+                  );
+                },
+              ),
             ),
           ),
         ),
