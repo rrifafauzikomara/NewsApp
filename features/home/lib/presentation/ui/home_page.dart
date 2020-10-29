@@ -40,7 +40,10 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
-      body: _listWidget[_bottomNavIndex],
+      body: IndexedStack(
+        index: _bottomNavIndex,
+        children: _listWidget,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _bottomNavIndex,
         items: _bottomNavBarItems,
