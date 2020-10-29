@@ -78,7 +78,8 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 
 
 ## How to run Flutter App
-Before run the app, make sure to generate file `*.g.dart`, you can use this command on terminal. But before you running that, make sure go to [list_news](https://github.com/rrifafauzikomara/NewsApp/tree/master/features/list_news) feature module first using `cd` command. For example `cd features` then `cd list_news`. Then you can run the command below.
+### Generated `*.g.dart` file
+Before run the app, make sure to generate `*.g.dart` file, you can use this command on terminal. But before you running that, make sure go to [list_news](https://github.com/rrifafauzikomara/NewsApp/tree/master/features/list_news) feature module first using `cd` command. For example `cd features` then `cd list_news`. Then you can run the command below.
 
 One time build:
 ```console
