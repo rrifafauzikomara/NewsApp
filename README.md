@@ -63,13 +63,13 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 * [BLoC Pattern](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
 * State - (Loading, No Data, Has Data, No Internet Connection, Request Timeout, Error)
 * [Flutter Screenutil](https://pub.dev/packages/flutter_screenutil) - Responsive UI
+* [Flavor](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b) - Handling different environments for development and production.
 
 
 ## Todo
 * [ ] Dynamic Theme (Light and Dark by App)
 * [ ] Localization by App (ID, EN)
 * [ ] Favorite News using Moor
-* [ ] Flavoring (Development and Production)
 * [ ] CI/CD
 * [ ] Unit Testing
 * [ ] Integration Testing
@@ -88,6 +88,21 @@ or you can watch for changes and rebuild automatically
 ```console
 flutter pub run build_runner watch
 ```
+
+
+### Run Flutter with command prompt
+Development
+```console
+flutter run --flavor development --target=lib/ui/launcher/main-dev.dart
+```
+Production
+```console
+flutter run --flavor production --target=lib/ui/launcher/main-prod.dart
+```
+
+
+### Run Flutter with green button
+Just follow this [instruction](https://github.com/rrifafauzikomara/MovieApp#run-flutter-app-between-flavor-for-development-and-production-with-).
 
 
 ## Author
