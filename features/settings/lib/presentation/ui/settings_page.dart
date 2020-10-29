@@ -1,7 +1,7 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:settings/presentation/bloc/setting/bloc.dart';
+import 'package:settings/presentation/bloc/language/bloc.dart';
 import 'package:settings/presentation/bloc/theme/bloc.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
@@ -32,7 +32,6 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Widget _buildBody(BuildContext context) {
-    Modular.get<SettingsBloc>().add(GetLanguage());
     return ListView(
       children: [
         Material(
@@ -51,30 +50,20 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
         ),
-        BlocListener<SettingsBloc, SettingsState>(
-          listener: (context, state) {
-            if (state is EnglishLanguageState) {
-              context.locale = context.supportedLocales[0];
-            } else if (state is IndonesiaLanguageState) {
-              context.locale = context.supportedLocales[1];
-            }
-          },
-          child: Material(
-            child: ListTile(
-              title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
-              trailing: BlocBuilder<SettingsBloc, SettingsState>(
-                builder: (context, state) {
-                  return Switch.adaptive(
-                    value: state is LanguageState ? state.isActive : false,
-                    onChanged: (value) {
-                      setState(() {
-                        Modular.get<SettingsBloc>()
-                            .add(ChangeLanguage(isEnglish: value));
-                      });
-                    },
-                  );
-                },
-              ),
+        Material(
+          child: ListTile(
+            title: Text(Modular.get<LocaleKeys>().settingLanguage.tr()),
+            trailing: BlocBuilder<LanguageBloc, LanguageState>(
+              builder: (context, state) {
+                Modular.get<LanguageBloc>().add(GetLanguage());
+                return Switch.adaptive(
+                  value: state is InitialLanguage ? state.isIndonesian : false,
+                  onChanged: (value) {
+                    Modular.get<LanguageBloc>()
+                        .add(LanguageChanged(isIndonesian: value));
+                  },
+                );
+              },
             ),
           ),
         ),
@@ -85,7 +74,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => Modular.get<SettingsBloc>(),
+      create: (context) => Modular.get<LanguageBloc>(),
       child: PlatformWidget(
         androidBuilder: _buildAndroid,
         iosBuilder: _buildIos,
