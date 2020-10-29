@@ -1,5 +1,6 @@
 import 'package:bookmark/bookmark.dart';
 import 'package:core/core.dart';
+import 'package:core/network/api_constant.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:detail_news/detail_news.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,7 +16,7 @@ import 'package:shared/shared.dart';
 
 void main() {
   Bloc.observer = NewsBlocObserver();
-  Modular.init(CoreModule());
+  Modular.init(CoreModule(baseUrl: ApiConstant.baseUrlDebug));
   Modular.init(SharedModule());
   runApp(ModularApp(module: AppModule()));
 }
