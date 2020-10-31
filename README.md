@@ -13,7 +13,7 @@
 * Detail News
 * Dynamic Behavior (Cupertino for iOS, Material for Android)
 * Dynamic Theme (Light and Dark)
-* Localization by App, English and Indonesian (Still needs a little improvement 😣)
+* Localization (Still needs a little improvement 😣)
 
 
 ## 📸 Example iOS
@@ -64,8 +64,9 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 * [Dio](https://github.com/flutterchina/dio/) - A type-safe HTTP client.
 * [BLoC Pattern](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
 * State - (Loading, No Data, Has Data, No Internet Connection, Request Timeout, Error)
-* [Flutter Screenutil](https://pub.dev/packages/flutter_screenutil) - Responsive UI
+* [Flutter Screenutil](https://pub.dev/packages/flutter_screenutil) - Responsive UI.
 * [Flavor](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b) - Handling different environments for development and production.
+* [Localization](https://pub.dev/packages/easy_localization) - Easy to change language between English and Indonesian.
 
 
 ## Todo
