@@ -13,7 +13,7 @@
 * Detail News
 * Dynamic Behavior (Cupertino for iOS, Material for Android)
 * Dynamic Theme (Light and Dark)
-* Localization
+* Localization (Indonesian and English)
 
 
 ## 📸 Example iOS
