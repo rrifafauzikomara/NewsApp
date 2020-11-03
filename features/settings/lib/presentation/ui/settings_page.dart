@@ -55,8 +55,42 @@ class _SettingsPageState extends State<SettingsPage> {
           listener: (context, state) {
             if (state is EnglishLanguageState) {
               context.locale = context.supportedLocales[1];
+              SmoothDialog(
+                context: context,
+                path: Modular.get<ImageAssets>().successful,
+                mode: SmoothMode.Lottie,
+                content: "Aplikasi Anda sekarang menggunakan Bahasa Indonesia",
+                title: "Ganti Bahasa Berhasil!",
+                submit: () {
+                  Modular.to.pushNamedAndRemoveUntil(
+                      Modular.get<NamedRoutes>().homePage,
+                      (Route<dynamic> route) => false);
+                },
+                cancel: () {
+                  Modular.to.pushNamedAndRemoveUntil(
+                      Modular.get<NamedRoutes>().homePage,
+                      (Route<dynamic> route) => false);
+                },
+              );
             } else if (state is IndonesiaLanguageState) {
               context.locale = context.supportedLocales[0];
+              SmoothDialog(
+                context: context,
+                path: Modular.get<ImageAssets>().successful,
+                mode: SmoothMode.Lottie,
+                content: "Your Apps now using English Language",
+                title: "Change Language Successful!",
+                submit: () {
+                  Modular.to.pushNamedAndRemoveUntil(
+                      Modular.get<NamedRoutes>().homePage,
+                      (Route<dynamic> route) => false);
+                },
+                cancel: () {
+                  Modular.to.pushNamedAndRemoveUntil(
+                      Modular.get<NamedRoutes>().homePage,
+                      (Route<dynamic> route) => false);
+                },
+              );
             }
           },
           child: Material(

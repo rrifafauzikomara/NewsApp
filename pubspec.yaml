@@ -42,6 +42,7 @@ flutter:
   assets:
     - assets/images/
     - assets/languages/
+    - assets/animation/
 
   fonts:
     - family: IBMPlexSans

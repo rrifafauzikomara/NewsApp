@@ -24,6 +24,7 @@ dependencies:
   flutter_bloc: ^6.0.6
   webview_flutter: ^1.0.3
   shared_preferences: ^0.5.12+2
+  lottie: ^0.7.0+1
 
 dev_dependencies:
   flutter_test:
