@@ -84,7 +84,7 @@ Before run the app, make sure to generate `*.g.dart` file, you can use this comm
 
 One time build:
 ```console
-flutter pub run build_runner build
+flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
 or you can watch for changes and rebuild automatically
 ```console
