@@ -98,7 +98,7 @@ flutter run --flavor production --target=lib/ui/launcher/main-prod.dart
 
 
 ## Run the App using green button
-Just follow this [instruction](https://github.com/rrifafauzikomara/MovieApp#run-flutter-app-between-flavor-for-development-and-production-with-).
+Just follow this [instruction](https://github.com/rrifafauzikomara/MovieApp#run-the-app-using-).
 
 
 ## Author
