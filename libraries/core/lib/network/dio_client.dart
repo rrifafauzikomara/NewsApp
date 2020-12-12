@@ -1,6 +1,6 @@
 import 'dart:convert';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:dependencies/dependencies.dart';
 
 class DioClient {
   final String apiBaseUrl;

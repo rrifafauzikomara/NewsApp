@@ -12,8 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  json_serializable: ^3.5.0
-
+  json_serializable: any
   detail_news:
     path: ../detail_news
 

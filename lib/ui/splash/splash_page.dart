@@ -1,7 +1,10 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:dependencies/dependencies.dart';
+import 'package:package_info/package_info.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared/common/common.dart';
 import 'package:shared/widget/widget.dart';
 

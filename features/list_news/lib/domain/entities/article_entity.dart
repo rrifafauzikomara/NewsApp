@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 class ArticleEntity extends Equatable {

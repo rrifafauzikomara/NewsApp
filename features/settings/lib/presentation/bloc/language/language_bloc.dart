@@ -1,5 +1,5 @@
 import 'package:core/local/shared_pref_helper.dart';
-import 'package:dependencies/dependencies.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:settings/presentation/bloc/language/language_event.dart';
 import 'package:settings/presentation/bloc/language/language_state.dart';

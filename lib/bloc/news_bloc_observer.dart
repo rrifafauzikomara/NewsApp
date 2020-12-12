@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 // We can extend `BlocDelegate` and override `onTransition` and `onError`
 // in order to handle transitions and errors from all Blocs.

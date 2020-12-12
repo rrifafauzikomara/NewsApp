@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:list_news/domain/entities/article_entity.dart';
 

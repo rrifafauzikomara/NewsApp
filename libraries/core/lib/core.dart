@@ -1,6 +1,7 @@
 import 'package:core/local/shared_pref_helper.dart';
 import 'package:core/network/dio_client.dart';
-import 'package:dependencies/dependencies.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/cupertino.dart';
 
 class CoreModule extends ChildModule {

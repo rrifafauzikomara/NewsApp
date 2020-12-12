@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared/common/common.dart';
 
 class SharedModule extends ChildModule {

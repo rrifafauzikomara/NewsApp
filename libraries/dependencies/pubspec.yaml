@@ -12,19 +12,22 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_modular: ^2.0.1
+  # UI
   flutter_svg: ^0.19.0
   package_info: ^0.4.3
-  bloc: ^6.0.3
   flutter_screenutil: ^3.1.1
   easy_localization: ^2.3.3
   cached_network_image: ^2.3.2+1
+  webview_flutter: ^1.0.3
+  lottie: ^0.7.0+1
+
+  # Core
+  flutter_modular: ^2.0.1
+  bloc: ^6.0.3
   dio: ^3.0.10
   equatable: ^1.2.5
   flutter_bloc: ^6.0.6
-  webview_flutter: ^1.0.3
   shared_preferences: ^0.5.12+2
-  lottie: ^0.7.0+1
 
 dev_dependencies:
   flutter_test:

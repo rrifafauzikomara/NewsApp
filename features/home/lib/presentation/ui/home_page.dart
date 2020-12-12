@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:dependencies/dependencies.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:list_news/presentation/ui/list_news_page.dart';
 import 'package:bookmark/presentation/ui/bookmark_page.dart';
 import 'package:shared/common/common.dart';
@@ -17,8 +18,8 @@ class _HomePageState extends State<HomePage> {
   int _bottomNavIndex = 0;
 
   List<Widget> _listWidget = [
-    Modular.get<ListNewsPage>(),
-    Modular.get<BookmarkPage>(),
+    ListNewsPage(),
+    BookmarkPage(),
   ];
 
   List<BottomNavigationBarItem> _bottomNavBarItems = [

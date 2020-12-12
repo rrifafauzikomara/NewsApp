@@ -71,10 +71,10 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 
 ## Todo
 * [ ] Favorite News using Moor
-* [ ] CI/CD
 * [ ] Unit Testing
 * [ ] Integration Testing
 * [ ] Code Coverage
+* [ ] CI/CD
 * [ ] Publish to Play Store
 
 

@@ -1,5 +1,5 @@
 import 'package:core/local/shared_pref_helper.dart';
-import 'package:dependencies/dependencies.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:settings/presentation/bloc/language/bloc.dart';
 import 'package:settings/presentation/ui/settings_page.dart';
 import 'package:shared/common/common.dart';

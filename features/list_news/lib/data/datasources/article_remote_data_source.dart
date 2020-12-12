@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:list_news/data/models/article_result_model.dart';
 
