@@ -78,21 +78,15 @@ It's recommended to do self-study about it in here (BLoC: [here](https://bloclib
 * [ ] Publish to Play Store
 
 
-## How to run Flutter App
-### Generated `*.g.dart` file
-Before run the app, make sure to generate `*.g.dart` file, you can use this command on terminal. But before you running that, make sure go to [list_news](https://github.com/rrifafauzikomara/NewsApp/tree/master/features/list_news) feature module first using `cd` command. For example `cd features` then `cd list_news`. Then you can run the command below.
-
-One time build:
-```console
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
-or you can watch for changes and rebuild automatically
-```console
-flutter pub run build_runner watch
-```
+## How to run the App
+1. Clone this project.
+2. Open with your favorite tools editor.
+3. Run `Pub get` on each module sequentially starting from `dependencies` and ends `your root project` to generated `pubspec.lock` file.
+4. Generated `*.g.dart` file in `list_news` module. But before you running that, make sure go to [list_news](https://github.com/rrifafauzikomara/NewsApp/tree/master/features/list_news) module first using `cd` command. For example `cd features` and then `cd list_news`. Then you can run this command: `flutter packages pub run build_runner build --delete-conflicting-outputs`.
+5. Run the App using [this](https://github.com/rrifafauzikomara/MovieApp#run-the-app-using-command-prompt) or [this](https://github.com/rrifafauzikomara/MovieApp#run-the-app-using-). Enjoy your App!.
 
 
-### Run Flutter with command prompt
+## Run the App using command prompt
 Development
 ```console
 flutter run --flavor development --target=lib/ui/launcher/main-dev.dart
@@ -103,7 +97,7 @@ flutter run --flavor production --target=lib/ui/launcher/main-prod.dart
 ```
 
 
-### Run Flutter with green button
+## Run the App using green button
 Just follow this [instruction](https://github.com/rrifafauzikomara/MovieApp#run-flutter-app-between-flavor-for-development-and-production-with-).
 
 
