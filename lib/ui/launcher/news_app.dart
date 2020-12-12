@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home/home.dart';
 import 'package:list_news/list_news.dart';
+import 'package:list_news/presentation/bloc/bloc.dart';
 import 'package:news_app/ui/launcher/app_config.dart';
 import 'package:news_app/ui/splash/splash_page.dart';
 import 'package:settings/presentation/bloc/theme/bloc.dart';
@@ -58,8 +59,15 @@ class AppModule extends MainModule {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => Modular.get<ThemeBloc>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => Modular.get<ThemeBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => Modular.get<ArticleBloc>(),
+        ),
+      ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: _buildWithTheme,
       ),

@@ -78,12 +78,10 @@ class ListNewsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => Modular.get<ArticleBloc>()..add(LoadData()),
-      child: PlatformWidget(
-        androidBuilder: _buildAndroid,
-        iosBuilder: _buildIos,
-      ),
+    Modular.get<ArticleBloc>().add(LoadData());
+    return PlatformWidget(
+      androidBuilder: _buildAndroid,
+      iosBuilder: _buildIos,
     );
   }
 }
